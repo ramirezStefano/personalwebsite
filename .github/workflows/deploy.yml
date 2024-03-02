@@ -17,9 +17,6 @@ jobs:
         with:
           node-version: "16.19.1"
 
-      - name: Install 💻
-        run: pnpm install
-
       - name: Build 🛠️
         run: pnpm build
 
