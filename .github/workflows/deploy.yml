@@ -18,10 +18,10 @@ jobs:
           node-version: "16.19.1"
 
       - name: Install 💻
-        run: yarn install
+        run: pnpm install
 
       - name: Build 🛠️
-        run: yarn build
+        run: pnpm build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
