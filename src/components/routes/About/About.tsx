@@ -1,15 +1,14 @@
-import React, { FC } from "react";
-import { Button, CardMedia, Grid, Paper, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
-import { useTheme } from "@mui/material";
-import { motion, useScroll } from "framer-motion";
+import { FC } from "react";
+import { Grid, Paper, Typography } from "@mui/material";
+// import { useTheme } from "@mui/material";
+// import { useScroll } from "framer-motion";
 
 interface AboutProps {}
 
 const About: FC<AboutProps> = () => {
-  const theme = useTheme();
+  // const theme = useTheme();
 
-  const { scrollYProgress } = useScroll();
+  // const { scrollYProgress } = useScroll();
   return (
     <Grid container justifyContent="center" sx={{ padding: 2, marginTop: 4 }}>
       <Grid item xs={12} sm={8}>

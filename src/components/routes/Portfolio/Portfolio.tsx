@@ -1,8 +1,5 @@
-import React, { FC } from "react";
-import { Button, Grid, Paper, Typography } from "@mui/material";
-import Header from "../../Header/Header";
-import Footer from "../../Footer/Footer";
-import { Link } from "react-router-dom";
+import { FC } from "react";
+import { Grid, Paper, Typography } from "@mui/material";
 interface PortfolioProps {}
 
 const Portfolio: FC<PortfolioProps> = () => {

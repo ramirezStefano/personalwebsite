@@ -1,12 +1,12 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { Typography } from "@mui/material";
-import { useRouteError } from "react-router-dom";
+// import { useRouteError } from "react-router-dom";
 
 interface ErrorPageProps {}
 
 const ErrorPage: FC<ErrorPageProps> = () => {
-  const error: string | any = useRouteError();
-  console.error(error);
+  // const error: string | any = useRouteError();
+  // console.error(error);
 
   return (
     <>
@@ -18,7 +18,7 @@ const ErrorPage: FC<ErrorPageProps> = () => {
         Sorry, an unexpected error has occurred.
       </Typography>
 
-      <Typography>{error.statusText || error.message}</Typography>
+      {/* <Typography>{error.statusText || error.message}</Typography> */}
     </>
   );
 };
