@@ -1,6 +1,5 @@
-import React, { FC } from "react";
-// import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Grid, Container, useTheme } from "@mui/material";
+import { FC } from "react";
+import { Typography, Grid, useTheme } from "@mui/material";
 interface FooterProps {}
 
 const Footer: FC<FooterProps> = () => {

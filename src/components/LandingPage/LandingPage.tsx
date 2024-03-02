@@ -1,6 +1,5 @@
-import React, { FC } from "react";
-import { Button, Typography, Paper, Grid, useTheme } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+import { FC } from "react";
+import { Button, Typography, Grid, useTheme } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { Link } from "react-router-dom";
@@ -12,9 +11,9 @@ interface LandingPageProps {
 const LandingPage: FC<LandingPageProps> = () => {
   const theme = useTheme();
 
-  const handleButtonClick = () => {
-    alert("Button Clicked!");
-  };
+  // const handleButtonClick = () => {
+  //   alert("Button Clicked!");
+  // };
 
   const handleLinkedInButtonClick = () => {
     <Link to="https://www.linkedin.com/in/stefano-ramirez-novello/" />;
@@ -23,9 +22,6 @@ const LandingPage: FC<LandingPageProps> = () => {
   return (
     <Grid container marginTop={15} justifyContent={"center"}>
       <Grid item>
-        {/* working with the curernt setup*/}
-        {/* <Paper sx={{ height: "25vh", width: "80vw" }}> */}
-        {/* Typography component for a title */}
         <a href="#top" aria-hidden="true" hidden>
           #
         </a>
@@ -43,7 +39,6 @@ const LandingPage: FC<LandingPageProps> = () => {
           to elevate your online presence and achieve your digital goals!
         </Typography>
 
-        {/* Button component with an onClick handler */}
         <Button
           variant="contained"
           color="primary"
