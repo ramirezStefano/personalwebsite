@@ -1,12 +1,10 @@
 import { FC } from "react";
-import { Typography, Grid, useTheme } from "@mui/material";
+import { Typography, Grid } from "@mui/material";
 interface FooterProps {}
 
 const Footer: FC<FooterProps> = () => {
-  const theme = useTheme();
-
   return (
-    <Grid sx={{ backgroundColor: theme.palette.secondary.dark }}>
+    <Grid>
       <Typography variant="body1" gutterBottom>
         © [2024] ramirezstefano.com All rights reserved.
       </Typography>
