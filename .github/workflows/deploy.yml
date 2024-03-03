@@ -1,7 +1,7 @@
 on:
   push:
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
@@ -18,3 +18,10 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
+      - name: Build
+        run: pnpm build
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: gh-pages
