@@ -13,13 +13,20 @@ jobs:
       - name: Checkout 📝
         uses: actions/checkout@v3
 
-      - name: Configure Node 🔎
+      - name: Configure PNPM 🔎
+        - uses: actions/checkout@v3
+        - uses: pnpm/action-setup@v3
+          with:
+            version: 8
+
+      - name: Use Node.js ${{ matrix.node-version }} 🔎
         uses: actions/setup-node@v3
         with:
-          node-version: "16.19.1"
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
 
-      - name: Install pnpm
-        run: npm install pnpm
+    - name: Install dependencies
+      run: pnpm install
 
       - name: Install 💻
         run: pnpm install
