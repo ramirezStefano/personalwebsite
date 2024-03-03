@@ -11,16 +11,19 @@ jobs:
       - uses: pnpm/action-setup@v3
         with:
           version: 8
-      - name: Use Node.js ${{ matrix.node-version }}
+
+      - name: Use Node.js ${{ matrix.node-version }} 🎛️
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
-      - name: Install dependencies
+
+      - name: Install dependencies with pnpm 📟
         run: pnpm install
       - name: Build
         run: pnpm build
-      - name: Deploy
+
+      - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
