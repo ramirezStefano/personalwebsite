@@ -28,22 +28,21 @@ const Header: React.FC = () => {
     const buttonText: string = event.currentTarget.innerText.toLowerCase();
     switch (buttonText) {
       case "about":
-        navigate("/about/1");
+        navigate("/about/");
         break;
       case "education":
-        navigate("/education/1");
+        navigate("/education/");
         break;
       case "experience":
-        navigate("/experience/1");
+        navigate("/experience/");
         break;
       case "skills":
-        navigate("/skills/1");
+        navigate("/skills/");
         break;
       case "portfolio":
-        navigate("/portfolio/1");
+        navigate("/portfolio/");
         break;
       default:
-        // Handle the default case or do nothing
         break;
     }
 
@@ -68,7 +67,7 @@ const Header: React.FC = () => {
               textDecoration: "none",
             }}
           >
-            <Link to={`landingpage/1`}>RAMIREZ STEFANO</Link>
+            <Link to={`/`}>RAMIREZ STEFANO</Link>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>

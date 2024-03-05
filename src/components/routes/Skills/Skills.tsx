@@ -24,7 +24,7 @@ const Skills: FC<SkillsProps> = () => {
             </Typography>
             <Typography variant="body1" paragraph>
               Other: CLI Unix Commands, Assembly Language (LC3), Markdown, .env
-              Configuration
+              Configuration,
             </Typography>
           </Paper>
         </Grid>
