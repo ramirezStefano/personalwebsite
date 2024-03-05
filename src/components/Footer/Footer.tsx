@@ -5,7 +5,7 @@ interface FooterProps {}
 const Footer: FC<FooterProps> = () => {
   return (
     <Grid>
-      <Typography variant="body1" gutterBottom>
+      <Typography variant="body1">
         © [2024] ramirezstefano.com All rights reserved.
       </Typography>
 
