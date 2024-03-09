@@ -100,8 +100,12 @@ const Header: React.FC = () => {
               }}
             >
               {pages.map((page) => (
-                <IconButton key={page} onClick={handleTopNavButtons}>
-                  <Typography textAlign="center">{page}</Typography>
+                <IconButton
+                  key={page}
+                  onClick={handleTopNavButtons}
+                  onMouseDown={handleTopNavButtons}
+                >
+                  {page}
                 </IconButton>
               ))}
             </Menu>
