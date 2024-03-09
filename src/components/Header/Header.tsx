@@ -8,7 +8,7 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
+// import MenuItem from "@mui/material/MenuItem";
 import { Link, useNavigate } from "react-router-dom";
 
 const pages = ["About", "Education", "Experience", "Skills", "Portfolio"];
@@ -100,9 +100,9 @@ const Header: React.FC = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleTopNavButtons}>
+                <IconButton key={page} onClick={handleTopNavButtons}>
                   <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
+                </IconButton>
               ))}
             </Menu>
           </Box>
