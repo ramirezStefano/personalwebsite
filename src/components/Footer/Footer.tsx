@@ -4,7 +4,7 @@ interface FooterProps {}
 
 const Footer: FC<FooterProps> = () => {
   return (
-    <Grid>
+    <Grid sx={{ position: "fixed", bottom: 0, width: "100vw" }}>
       <Typography variant="body1">
         © [2024] ramirezstefano.com All rights reserved.
       </Typography>
