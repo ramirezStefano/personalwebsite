@@ -1,16 +1,15 @@
 import { FC } from "react";
 import { Grid, Paper, Typography } from "@mui/material";
-// import { useTheme } from "@mui/material";
-// import { useScroll } from "framer-motion";
 
 interface AboutProps {}
 
 const About: FC<AboutProps> = () => {
-  // const theme = useTheme();
-
-  // const { scrollYProgress } = useScroll();
   return (
-    <Grid container justifyContent="center" sx={{ padding: 2, marginTop: 4 }}>
+    <Grid
+      container
+      justifyContent="center"
+      sx={{ padding: 2, marginTop: 4, marginBottom: 8 }}
+    >
       <Grid item xs={12} sm={8}>
         <Paper sx={{ padding: 2, marginBottom: 4 }}>
           <Typography variant="h4" gutterBottom>
