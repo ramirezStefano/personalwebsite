@@ -15,7 +15,7 @@ const LandingPage: FC<LandingPageProps> = () => {
 
   return (
     <>
-      <Grid container justifyContent={"center"} marginBottom={4}>
+      <Grid container sx={{ marginTop: 12, marginBottom: 8 }}>
         <Grid item>
           <Typography variant="h1" gutterBottom>
             Welcome to my Website!
