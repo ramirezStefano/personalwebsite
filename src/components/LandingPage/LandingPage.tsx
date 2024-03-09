@@ -52,7 +52,7 @@ const LandingPage: FC<LandingPageProps> = () => {
         </Grid>
         {/* <ParticlesBg color="#ff0000" num={50} type="cobweb" bg={true} /> */}
         <ParticlesBg
-          color={theme.palette.secondary.main}
+          color={theme.palette.success.main}
           num={30}
           type="cobweb"
           bg={true}

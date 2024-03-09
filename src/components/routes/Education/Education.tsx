@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Grid, Paper, Typography } from "@mui/material";
+import { Divider, Grid, Paper, Typography } from "@mui/material";
 interface EducationProps {}
 
 const Education: FC<EducationProps> = () => {
@@ -13,9 +13,15 @@ const Education: FC<EducationProps> = () => {
             </Typography>
             <Typography variant="body1" paragraph>
               British School of Costa Rica International Baccalaureate Diploma
-              with Higher Levels in Computer Science, English, and Physics
-              University of California, Santa Cruz (UCSC) Pursued a degree in
-              Computer Science
+              with Higher Levels in Computer Science, English, and Physics.
+            </Typography>
+            <Divider />
+            <Typography>
+              Higher education at University of California, Santa Cruz (UCSC)
+              Pursued a degree in Computer Science.
+            </Typography>
+            <Typography>
+              Github Workshops at (UCSC). LinkedIn Certified in
             </Typography>
           </Paper>
         </Grid>
