@@ -128,6 +128,7 @@ const Header: React.FC = () => {
               <Button
                 key={page}
                 onClick={handleTopNavButtons}
+                onMouseDown={handleTopNavButtons}
                 sx={{ my: 2, color: "#0d99ff", display: "block" }}
               >
                 {page}
