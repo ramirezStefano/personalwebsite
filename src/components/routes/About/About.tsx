@@ -8,7 +8,7 @@ const About: FC<AboutProps> = () => {
     <Grid
       container
       justifyContent="center"
-      sx={{ padding: 2, marginTop: 4, marginBottom: 8 }}
+      sx={{ padding: 2, marginTop: 12, marginBottom: 8 }}
     >
       <Grid item xs={12} sm={8}>
         <Paper sx={{ padding: 2, marginBottom: 4 }}>

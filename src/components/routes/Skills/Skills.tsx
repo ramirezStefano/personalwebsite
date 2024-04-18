@@ -5,7 +5,11 @@ interface SkillsProps {}
 const Skills: FC<SkillsProps> = () => {
   return (
     <>
-      <Grid container justifyContent="center" sx={{ padding: 2, marginTop: 4 }}>
+      <Grid
+        container
+        justifyContent="center"
+        sx={{ padding: 2, marginTop: 12 }}
+      >
         <Grid item xs={12} sm={8}>
           <Paper sx={{ padding: 2, marginBottom: 4 }}>
             <Typography variant="h4" gutterBottom>
