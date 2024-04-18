@@ -1,29 +1,23 @@
 import { FC } from "react";
-import { Typography, Grid, useTheme } from "@mui/material";
+import { Typography, Grid } from "@mui/material";
 interface FooterProps {}
 
 const Footer: FC<FooterProps> = () => {
-  const theme = useTheme();
-
   return (
     <Grid
       sx={{
         position: "fixed",
         bottom: 0,
-        width: "100vw",
+        width: "100%",
         paddingTop: 1,
-        backgroundColor: theme.palette.secondary.main,
+        backgroundColor: "gray",
       }}
     >
-      <Typography variant="body1" color={theme.palette.text.secondary}>
+      <Typography variant="body1">
         © [2024] ramirezstefano.com All rights reserved.
       </Typography>
 
-      <Typography
-        variant="body1"
-        color={theme.palette.text.secondary}
-        paragraph
-      >
+      <Typography variant="body1" paragraph>
         6-26 Campo Real, San Rafael Alajuela, San Jose, Costa Rica
       </Typography>
     </Grid>
