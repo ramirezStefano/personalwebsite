@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Divider, Grid, Paper, Typography } from "@mui/material";
+import { Grid, Paper, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 interface PortfolioProps {}
 
@@ -32,7 +32,9 @@ const Portfolio: FC<PortfolioProps> = () => {
                 Sadly this is a private repository but you can check out the
                 amazing product we built.
               </Typography>
-              <Link to="https://honeygrid.ai/">Checkout HoneyGrid here!</Link>
+              <Typography>
+                <Link to="https://honeygrid.ai/">Checkout HoneyGrid here!</Link>
+              </Typography>
             </Paper>
 
             <Paper elevation={3} sx={{ margin: 2, padding: 2 }}>
@@ -52,9 +54,11 @@ const Portfolio: FC<PortfolioProps> = () => {
               <Typography variant="body1" paragraph>
                 Link to the project or its repository.
               </Typography>
-              <Link to="https://github.com/evargast/signature-generator">
-                Checkout our email signature generator here!
-              </Link>
+              <Typography>
+                <Link to="https://github.com/evargast/signature-generator">
+                  Checkout our email signature generator here!
+                </Link>
+              </Typography>
             </Paper>
 
             <Paper elevation={3} sx={{ margin: 2, padding: 2 }}>
@@ -68,36 +72,15 @@ const Portfolio: FC<PortfolioProps> = () => {
                 website is still under development with constant refactors where
                 needed and updates.
               </Typography>
-              <Typography></Typography>
-              <Typography variant="body1" paragraph>
-                Technologies Used:
-              </Typography>
-              <Divider />
-
-              <Link to="https://vitejs.dev/">Vite</Link>
-              <Divider />
-
-              <Link to="https://react.dev/">React</Link>
-              <Divider />
-
-              <Link to="https://pages.github.com/">Github Pages</Link>
-              <Divider />
-
-              <Link to="https://www.godaddy.com/">GoDaddy</Link>
-              <Divider />
-
-              <Link to="https://mui.com/">Material UI</Link>
-              <Divider />
-
-              <Link to="https://reactrouter.com/en/main">React-router</Link>
-              <Divider />
 
               <Typography variant="body1" paragraph>
                 Link to the repo:
               </Typography>
-              <Link to="https://github.com/ramirezStefano/ramirezStefano.github.io">
-                Here!
-              </Link>
+              <Typography>
+                <Link to="https://github.com/ramirezStefano/ramirezStefano.github.io">
+                  Here!
+                </Link>
+              </Typography>
             </Paper>
 
             <Paper elevation={3} sx={{ margin: 2, padding: 2 }}>

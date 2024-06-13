@@ -15,8 +15,17 @@ const LandingPage: FC<LandingPageProps> = () => {
 
   return (
     <>
-      <Grid container sx={{ marginTop: 12, marginBottom: 8 }}>
-        <Grid item>
+      <Grid
+        display={"grid"}
+        container
+        sx={{
+          marginTop: 12,
+          marginBottom: 8,
+          justifyContent: "center",
+          alignContent: "center",
+        }}
+      >
+        <Grid item sx={{ alignSelf: "center", justifySelf: "center" }}>
           <Typography variant="h1" gutterBottom>
             Welcome to my Website!
           </Typography>
@@ -51,13 +60,13 @@ const LandingPage: FC<LandingPageProps> = () => {
           {/* </Paper> */}
         </Grid>
         {/* <ParticlesBg color="#ff0000" num={50} type="cobweb" bg={true} /> */}
-        <ParticlesBg
-          color={theme.palette.success.main}
-          num={30}
-          type="cobweb"
-          bg={true}
-        />
       </Grid>
+      <ParticlesBg
+        color={theme.palette.success.main}
+        num={30}
+        type="cobweb"
+        bg={true}
+      />
     </>
   );
 };

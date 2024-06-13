@@ -6,11 +6,15 @@ const Footer: FC<FooterProps> = () => {
   return (
     <Grid
       sx={{
+        display: "grid",
+        gridAutoFlow: "row",
         position: "fixed",
         bottom: 0,
-        width: "100%",
+        width: "100vw",
         paddingTop: 1,
         backgroundColor: "gray",
+        borderTopRightRadius: 15,
+        borderTopLeftRadius: 15,
       }}
     >
       <Typography variant="body1">
