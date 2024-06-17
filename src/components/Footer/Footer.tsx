@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Typography, Grid } from "@mui/material";
+
 interface FooterProps {}
 
 const Footer: FC<FooterProps> = () => {
@@ -15,6 +16,7 @@ const Footer: FC<FooterProps> = () => {
         backgroundColor: "gray",
         borderTopRightRadius: 15,
         borderTopLeftRadius: 15,
+        marginLeft: -1,
       }}
     >
       <Typography variant="body1">
@@ -28,4 +30,4 @@ const Footer: FC<FooterProps> = () => {
   );
 };
 
-export default Footer;
+export { Footer };
