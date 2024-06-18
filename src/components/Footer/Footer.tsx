@@ -10,7 +10,7 @@ const Footer: FC<FooterProps> = () => {
         display: "grid",
         gridAutoFlow: "row",
         position: "fixed",
-        bottom: 0,
+        bottom: -1,
         width: "100vw",
         paddingTop: 1,
         backgroundColor: "gray",
