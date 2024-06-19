@@ -12,12 +12,6 @@ const pages = ["About", "Education", "Experience", "Skills", "Portfolio"];
 const Header: FC = () => {
   const navigate = useNavigate();
 
-  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
-
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
   const handleTopNavButtons = (event: React.MouseEvent<HTMLElement>) => {
     const buttonText: string = event.currentTarget.innerText.toLowerCase();
     switch (buttonText) {
@@ -39,8 +33,6 @@ const Header: FC = () => {
       default:
         break;
     }
-
-    setAnchorElNav(null);
   };
 
   return (
