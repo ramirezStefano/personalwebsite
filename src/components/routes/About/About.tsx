@@ -9,7 +9,12 @@ const About: FC<AboutProps> = () => {
       <Grid
         container
         justifyContent="center"
-        sx={{ gridAutoFlow: "row", padding: 2, marginTop: 12, marginBottom: 8 }}
+        sx={{
+          gridAutoFlow: "row",
+          padding: 2,
+          marginTop: 12,
+          marginBottom: 16,
+        }}
       >
         {/* <Grid item sx={{ padding: "10px" }}>
           <TwistingSquares />

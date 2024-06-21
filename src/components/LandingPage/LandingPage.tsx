@@ -2,16 +2,12 @@ import { FC } from "react";
 import { Button, Typography, Grid, useTheme } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { Link } from "react-router-dom";
 import ParticlesBg from "particles-bg";
+import "../../App.css";
 interface LandingPageProps {}
 
 const LandingPage: FC<LandingPageProps> = () => {
-  const theme = useTheme();
-
-  const handleLinkedInButtonClick = () => {
-    <Link to="https://www.linkedin.com/in/stefano-ramirez-novello/" />;
-  };
+  const style = useTheme();
 
   return (
     <>
@@ -26,11 +22,11 @@ const LandingPage: FC<LandingPageProps> = () => {
         }}
       >
         <Grid item sx={{ alignSelf: "center", justifySelf: "center" }}>
-          <Typography variant="h1" gutterBottom>
+          <Typography className="animate delay-1" variant="h1" gutterBottom>
             Welcome to my Website!
           </Typography>
 
-          <Typography variant={"h6"}>
+          <Typography className="animate delay-2" variant={"h6"}>
             I specialize in web development, utilizing cutting-edge technologies
             like React, Vite, and Material UI to create exceptional digital
             solutions. With meticulous attention to detail, I craft sleek and
@@ -41,28 +37,48 @@ const LandingPage: FC<LandingPageProps> = () => {
             goals!
           </Typography>
 
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleLinkedInButtonClick}
-            sx={{ margin: 6 }}
+          <Grid
+            display={"grid"}
+            gridTemplateColumns={"1fr ,1fr"}
+            gridAutoFlow={"column"}
+            marginTop={"75px"}
+            marginBottom={{ xs: "150px" }}
+            justifyContent={"center"}
           >
-            <LinkedInIcon sx={{ marginRight: 1 }} />
-            <a href="https://www.linkedin.com/in/stefano-ramirez-novello/">
+            <Button
+              className="animate delay-3"
+              variant="contained"
+              color="primary"
+              onClick={() => {
+                window.location.href =
+                  "https://www.linkedin.com/in/stefano-ramirez-novello/";
+              }}
+              sx={{
+                margin: 2,
+                minWidth: 150,
+                maxWidth: 250,
+              }}
+            >
+              <LinkedInIcon sx={{ marginRight: 1 }} />
               Contact me!
-            </a>
-          </Button>
-          <Button variant="contained" color="primary" sx={{ margin: 6 }}>
-            <GitHubIcon sx={{ marginRight: 1 }} />
-            <a href="https://github.com/ramirezStefano">Follow me!</a>
-          </Button>
-
-          {/* </Paper> */}
+            </Button>
+            <Button
+              className="animate delay-3"
+              variant="contained"
+              color="primary"
+              sx={{ margin: 2, minWidth: 150, maxWidth: 250 }}
+              onClick={() => {
+                window.location.href = "https://github.com/ramirezStefano/";
+              }}
+            >
+              <GitHubIcon sx={{ marginRight: 1 }} />
+              Follow Me!
+            </Button>
+          </Grid>
         </Grid>
-        {/* <ParticlesBg color="#ff0000" num={50} type="cobweb" bg={true} /> */}
       </Grid>
       <ParticlesBg
-        color={theme.palette.success.main}
+        color={style.palette.primary.main}
         num={30}
         type="cobweb"
         bg={true}
@@ -70,5 +86,4 @@ const LandingPage: FC<LandingPageProps> = () => {
     </>
   );
 };
-
 export default LandingPage;
