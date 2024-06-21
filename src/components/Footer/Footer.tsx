@@ -10,10 +10,12 @@ import ComputerIcon from "@mui/icons-material/Computer";
 import MovingIcon from "@mui/icons-material/Moving";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useTheme } from "@mui/material";
 
 interface FooterProps {}
 
 const Footer: FC<FooterProps> = () => {
+  const style = useTheme();
   const [value, setValue] = React.useState(0);
   const navigate = useNavigate();
 
@@ -46,21 +48,31 @@ const Footer: FC<FooterProps> = () => {
         sx={{
           display: "grid",
           gridAutoFlow: "row",
-          bottom: -1,
+          bottom: 0,
           width: "100vw",
-          paddingTop: 1,
-          backgroundColor: "gray",
+          backgroundColor: style.palette.primary.dark,
           borderTopRightRadius: 15,
           borderTopLeftRadius: 15,
-          marginLeft: -1,
-          padding: "50px",
+          padding: 2,
+          position: "fixed",
         }}
       >
-        <Typography variant="body1">
+        <Typography
+          sx={{
+            color: style.palette.getContrastText(style.palette.primary.dark),
+          }}
+        >
           © [2024] ramirezstefano.com All rights reserved.
         </Typography>
 
-        <Typography variant="body1" paragraph>
+        <Typography
+          variant="body1"
+          paragraph
+          sx={{
+            marginBottom: 5,
+            color: style.palette.getContrastText(style.palette.primary.dark),
+          }}
+        >
           6-26 Campo Real, San Rafael Alajuela, San Jose, Costa Rica
         </Typography>
       </Grid>

@@ -22,11 +22,13 @@ const Education: FC<EducationProps> = () => {
             with Higher Levels in Computer Science, English, and Physics.
           </Typography>
           <Divider className={"animate delay-4"} />
-          <Typography className={"animate delay-5"}>
+          <Typography className={"animate delay-5"} paragraph marginTop={2}>
             Higher education at University of California, Santa Cruz (UCSC)
             Pursued a degree in Computer Science.
           </Typography>
-          <Typography className={"animate delay-6"}>
+          <Divider className={"animate delay-4"} />
+
+          <Typography className={"animate delay-6"} paragraph marginTop={2}>
             Github Workshops at (UCSC). LinkedIn Certified in Career Skills in
             Software Development.
           </Typography>

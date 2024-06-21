@@ -10,7 +10,7 @@ const Portfolio: FC<PortfolioProps> = () => {
       <Grid
         container
         justifyContent="center"
-        sx={{ padding: 2, marginTop: 12, marginBottom: 8 }}
+        sx={{ padding: 2, marginTop: 12, marginBottom: 14 }}
       >
         <Grid item xs={12} sm={8}>
           <Paper

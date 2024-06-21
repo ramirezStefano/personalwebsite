@@ -2,8 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
-import { ThemeProvider } from "@mui/material";
-import theme from "./components/Theme/Theme.tsx";
+import { StyledEngineProvider } from "@mui/material";
 import LandingPage from "./components/LandingPage/LandingPage.tsx";
 import {
   createBrowserRouter,
@@ -17,6 +16,7 @@ import Education from "./components/routes/Education/Education.tsx";
 import Experience from "./components/routes/Experience/Experience.tsx";
 import Skills from "./components/routes/Skills/Skills.tsx";
 import Portfolio from "./components/routes/Portfolio/Portfolio.tsx";
+import MyThemeProvider from "./theme/MyThemeProvider.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -35,8 +35,10 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <RouterProvider router={router} />
-    </ThemeProvider>
+    <StyledEngineProvider injectFirst>
+      <MyThemeProvider>
+        <RouterProvider router={router} />
+      </MyThemeProvider>
+    </StyledEngineProvider>
   </React.StrictMode>,
 );
