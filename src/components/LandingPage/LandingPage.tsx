@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { Button, Typography, Grid, useTheme } from "@mui/material";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { Typography, Grid, useTheme, Paper } from "@mui/material";
 import ParticlesBg from "particles-bg";
+import codeImage from "../../assets/codeImage.jpg";
+import logoImg from "../../assets/ramirezStefanoLogo.svg";
 import "../../App.css";
 interface LandingPageProps {}
 
@@ -21,60 +21,69 @@ const LandingPage: FC<LandingPageProps> = () => {
           alignContent: "center",
         }}
       >
-        <Grid item sx={{ alignSelf: "center", justifySelf: "center" }}>
-          <Typography className="animate delay-1" variant="h1" gutterBottom>
-            Welcome to my Website!
-          </Typography>
-
-          <Typography className="animate delay-2" variant={"h6"}>
-            I specialize in web development, utilizing cutting-edge technologies
-            like React, Vite, and Material UI to create exceptional digital
-            solutions. With meticulous attention to detail, I craft sleek and
-            intuitive interfaces that prioritize user experience. By staying
-            updated with the latest industry trends, I ensure your website meets
-            the highest standards of performance and aesthetics. Let's
-            collaborate to elevate your online presence and achieve your digital
-            goals!
-          </Typography>
-
-          <Grid
-            display={"grid"}
-            gridTemplateColumns={"1fr ,1fr"}
-            gridAutoFlow={"column"}
-            marginTop={"75px"}
-            marginBottom={{ xs: "150px" }}
-            justifyContent={"center"}
+        <Grid
+          item
+          sx={{
+            alignSelf: "center",
+            justifySelf: "center",
+          }}
+        >
+          <Paper
+            sx={{
+              width: "90vw",
+              "@media (max-width: 768px)": {
+                // Apply styles for xs and sm screens
+                // width: "90vw",
+                padding: 1,
+                marginBottom: 15,
+                marginTop: 4,
+              },
+              padding: 1,
+              marginBottom: 20,
+              marginTop: 4,
+            }}
           >
-            <Button
-              className="animate delay-3"
-              variant="contained"
-              color="primary"
-              onClick={() => {
-                window.location.href =
-                  "https://www.linkedin.com/in/stefano-ramirez-novello/";
-              }}
-              sx={{
-                margin: 2,
-                minWidth: 150,
-                maxWidth: 250,
-              }}
+            {/* sx={{ display: { xs: "none", md: "grid" }, gridAutoFlow: "column" }} */}
+            <Typography className="animate delay-1" variant="h2" gutterBottom>
+              Welcome to my Website!
+            </Typography>
+            {/* <Typography className="animate delay-1" variant="h1" gutterBottom>
+              Welcome to my Website!
+            </Typography> */}
+
+            <img
+              style={{ maxWidth: "80vw", borderRadius: 16 }}
+              className="animate delay-2"
+              src={codeImage}
+              alt="logo picture"
+            />
+
+            <Typography
+              className="animate delay-2"
+              variant={"h6"}
+              // gutterBottom
+              sx={{ marginTop: 4, marginBottom: 0 }}
             >
-              <LinkedInIcon sx={{ marginRight: 1 }} />
-              Contact me!
-            </Button>
-            <Button
-              className="animate delay-3"
-              variant="contained"
-              color="primary"
-              sx={{ margin: 2, minWidth: 150, maxWidth: 250 }}
-              onClick={() => {
-                window.location.href = "https://github.com/ramirezStefano/";
+              I specialize in web development, utilizing cutting-edge
+              technologies like React, Vite, and Material UI to create
+              exceptional digital solutions. With meticulous attention to
+              detail, I craft sleek and intuitive interfaces that prioritize
+              user experience. By staying updated with the latest industry
+              trends, I ensure your website meets the highest standards of
+              performance and aesthetics. Let's collaborate to elevate your
+              online presence and achieve your digital goals!
+            </Typography>
+
+            <img
+              style={{
+                maxWidth: "80vw",
+                maxHeight: "20vh",
+                // alignSelf: "start",
               }}
-            >
-              <GitHubIcon sx={{ marginRight: 1 }} />
-              Follow Me!
-            </Button>
-          </Grid>
+              src={logoImg}
+              alt="logo picture"
+            />
+          </Paper>
         </Grid>
       </Grid>
       <ParticlesBg

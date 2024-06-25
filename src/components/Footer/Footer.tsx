@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Typography, Grid } from "@mui/material";
+import { Grid, Button, IconButton } from "@mui/material";
 import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
@@ -11,6 +11,8 @@ import MovingIcon from "@mui/icons-material/Moving";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 interface FooterProps {}
 
@@ -47,17 +49,23 @@ const Footer: FC<FooterProps> = () => {
       <Grid
         sx={{
           display: "grid",
-          gridAutoFlow: "row",
+          gridAutoFlow: "column",
+          gridTemplateColumns: "1fr, 1fr",
+          justifyContent: "space-around",
+          alignContent: window.innerWidth <= 768 ? "start" : "center",
+          // alignContent: "center",
           bottom: 0,
-          width: "100vw",
-          backgroundColor: style.palette.primary.dark,
+          width: "100dvw",
+          height: "13dvh",
+          backgroundColor: style.palette.background.paper,
           borderTopRightRadius: 15,
           borderTopLeftRadius: 15,
-          padding: 2,
+          padding: 0,
           position: "fixed",
+          border: `2px solid ${style.palette.primary.main}`,
         }}
       >
-        <Typography
+        {/* <Typography
           sx={{
             color: style.palette.getContrastText(style.palette.primary.dark),
           }}
@@ -74,14 +82,94 @@ const Footer: FC<FooterProps> = () => {
           }}
         >
           6-26 Campo Real, San Rafael Alajuela, San Jose, Costa Rica
-        </Typography>
+        </Typography> */}
+
+        <IconButton
+          aria-label="linkedIn Button Mobile"
+          className="animate delay-3"
+          onClick={() => {
+            window.location.href =
+              "https://www.linkedin.com/in/stefano-ramirez-novello/";
+          }}
+          sx={{
+            display: {
+              xs: "grid",
+              sm: "grid",
+              md: "none",
+              lg: "none",
+              xl: "none",
+            },
+            marginBottom: 50,
+          }}
+        >
+          <LinkedInIcon />
+        </IconButton>
+        <IconButton
+          className="animate delay-3"
+          sx={{
+            display: {
+              xs: "grid",
+              sm: "grid",
+              md: "none",
+              lg: "none",
+              xl: "none",
+            },
+            marginBottom: 50,
+          }}
+          onClick={() => {
+            window.location.href = "https://github.com/ramirezStefano/";
+          }}
+        >
+          <GitHubIcon sx={{ justifySelf: "center" }} />
+        </IconButton>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => {
+            window.location.href =
+              "https://www.linkedin.com/in/stefano-ramirez-novello/";
+          }}
+          sx={{
+            display: {
+              xs: "none",
+              sm: "none",
+              md: "grid",
+              lg: "grid",
+              xl: "grid",
+            },
+            gridAutoFlow: "column",
+          }}
+        >
+          <LinkedInIcon sx={{ marginRight: 1 }} />
+          Contact me!
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          sx={{
+            display: {
+              xs: "none",
+              sm: "none",
+              md: "grid",
+              lg: "grid",
+              xl: "grid",
+            },
+            gridAutoFlow: "column",
+          }}
+          onClick={() => {
+            window.location.href = "https://github.com/ramirezStefano/";
+          }}
+        >
+          <GitHubIcon sx={{ marginRight: 1 }} />
+          Follow me!
+        </Button>
       </Grid>
 
       <Box
         sx={{
           position: "fixed",
           bottom: 0,
-          left: -5,
+          left: 0,
           right: 0,
           display: {
             xs: "grid",

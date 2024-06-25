@@ -1,10 +1,11 @@
 import { FC } from "react";
-import { Grid, Paper, Typography } from "@mui/material";
+import { Grid, Paper, Typography, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
 import "../../../App.css";
 interface PortfolioProps {}
 
 const Portfolio: FC<PortfolioProps> = () => {
+  const style = useTheme();
   return (
     <>
       <Grid
@@ -37,7 +38,6 @@ const Portfolio: FC<PortfolioProps> = () => {
                 react native using the material library for native (Paper). An
                 then moved to the main react node application on web.
               </Typography>
-
               <Typography
                 className={"animate delay-6"}
                 variant="body1"
@@ -55,10 +55,14 @@ const Portfolio: FC<PortfolioProps> = () => {
                 amazing product we built.
               </Typography>
               <Typography className={"animate delay-8"}>
-                <Link to="https://honeygrid.ai/">Checkout HoneyGrid here!</Link>
+                <Link
+                  to="https://honeygrid.ai/"
+                  style={{ color: style.palette.primary.main }}
+                >
+                  Checkout HoneyGrid here!
+                </Link>
               </Typography>
             </Paper>
-
             <Paper
               className={"animate delay-3"}
               elevation={3}
@@ -95,12 +99,14 @@ const Portfolio: FC<PortfolioProps> = () => {
                 Link to the project or its repository.
               </Typography>
               <Typography className={"animate delay-8"}>
-                <Link to="https://github.com/evargast/signature-generator">
+                <Link
+                  to="https://github.com/evargast/signature-generator"
+                  style={{ color: style.palette.primary.main }}
+                >
                   Checkout our email signature generator here!
                 </Link>
               </Typography>
             </Paper>
-
             <Paper
               className={"animate delay-3"}
               elevation={3}
@@ -122,7 +128,6 @@ const Portfolio: FC<PortfolioProps> = () => {
                 website is still under development with constant refactors where
                 needed and updates.
               </Typography>
-
               <Typography
                 className={"animate delay-6"}
                 variant="body1"
@@ -131,12 +136,14 @@ const Portfolio: FC<PortfolioProps> = () => {
                 Link to the repo:
               </Typography>
               <Typography className={"animate delay-7"}>
-                <Link to="https://github.com/ramirezStefano/ramirezStefano.github.io">
+                <Link
+                  to="https://github.com/ramirezStefano/ramirezStefano.github.io"
+                  style={{ color: style.palette.primary.main }}
+                >
                   Here!
                 </Link>
               </Typography>
             </Paper>
-
             <Paper elevation={3} sx={{ margin: 2, padding: 2 }}>
               <Typography variant="body1" paragraph>
                 Other: CLI Unix Commands, Assembly Language (LC3), Markdown
