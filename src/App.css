@@ -12,6 +12,12 @@
   animation-fill-mode: backwards;
 }
 
+.animateRotation {
+  animation-duration: 20s;
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+}
+
 .delay-1 {
   animation-delay: 0.6s;
 }
@@ -43,6 +49,15 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 

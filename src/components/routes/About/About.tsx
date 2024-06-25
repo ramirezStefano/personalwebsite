@@ -16,9 +16,6 @@ const About: FC<AboutProps> = () => {
           marginBottom: 16,
         }}
       >
-        {/* <Grid item sx={{ padding: "10px" }}>
-          <TwistingSquares />
-        </Grid> */}
         <Grid item xs={12} sm={8}>
           <Paper className={"animate"} sx={{ padding: 2, marginBottom: 4 }}>
             <Typography className={"animate delay-1"} variant="h4" gutterBottom>

@@ -9,6 +9,8 @@ import { Grid, Paper, useTheme } from "@mui/material";
 import React from "react";
 import DarkModeSwitch from "../DarkModeSwitch/DarkModeSwitch";
 import ThemeColorShuffle from "../ThemeColorShuffle/ThemeColorShuffle";
+import logo from "../../assets/ramirezStefanoLogo.svg";
+import "../../App.css";
 
 const pages = ["About", "Education", "Experience", "Skills", "Portfolio"];
 
@@ -45,11 +47,22 @@ const Header: FC = () => {
         display="grid"
         gridAutoColumns={"column"}
         gridTemplateColumns={"1fr, 1fr, 1fr"}
-        justifyContent={"space-evenly"}
+        justifyContent={"space-around"}
       >
         <Toolbar disableGutters>
+          <img
+            className="animateRotation rotate"
+            aria-label="logo"
+            src={logo}
+            style={{
+              display: "block",
+              margin: 10,
+              width: window.innerWidth <= 768 ? "40px" : "60px",
+            }}
+          />
+
           <Typography
-            variant="h5"
+            variant={window.innerWidth <= 768 ? "h6" : "h5"}
             component="a"
             sx={{
               mr: 2,
