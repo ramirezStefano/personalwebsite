@@ -11,6 +11,7 @@ import DarkModeSwitch from "../DarkModeSwitch/DarkModeSwitch";
 import ThemeColorShuffle from "../ThemeColorShuffle/ThemeColorShuffle";
 import logo from "../../assets/ramirezStefanoLogo.svg";
 import "../../App.css";
+import { calculateHueRotate } from "../../utils/strings/strings";
 
 const pages = ["About", "Education", "Experience", "Skills", "Portfolio"];
 
@@ -58,6 +59,7 @@ const Header: FC = () => {
               display: "block",
               margin: 10,
               width: window.innerWidth <= 768 ? "40px" : "60px",
+              filter: `invert(1) sepia(1) saturate(5) hue-rotate(${calculateHueRotate(style.palette.primary.main)}deg)`, // Adjust filter properties
             }}
           />
 

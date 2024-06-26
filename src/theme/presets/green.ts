@@ -100,8 +100,8 @@ export const theme: AppTheme = {
         secondary: "#1b1c17",
       },
       background: {
-        default: "#fefdf4",
-        paper: "#fefcf4",
+        default: "#dcffdaff",
+        paper: "#eeffecff",
       },
       error: palette.augmentColor({
         color: {
