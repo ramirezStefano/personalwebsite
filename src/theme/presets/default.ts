@@ -71,6 +71,10 @@ export const theme: AppTheme = {
           contrastText: "#black",
         },
       }),
+      background: {
+        default: "#d1d1d1ff",
+        paper: "#e9e9e9ff",
+      },
     },
   },
 };

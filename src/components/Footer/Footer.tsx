@@ -18,7 +18,7 @@ interface FooterProps {}
 
 const Footer: FC<FooterProps> = () => {
   const style = useTheme();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState<number>();
   const navigate = useNavigate();
 
   const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
@@ -52,11 +52,9 @@ const Footer: FC<FooterProps> = () => {
           gridAutoFlow: "column",
           gridTemplateColumns: "1fr, 1fr",
           justifyContent: "space-around",
-          alignContent: window.innerWidth <= 768 ? "start" : "center",
-          // alignContent: "center",
           bottom: 0,
           width: "100dvw",
-          height: "13dvh",
+          height: "12vh",
           backgroundColor: style.palette.background.paper,
           borderTopRightRadius: 15,
           borderTopLeftRadius: 15,
@@ -65,28 +63,8 @@ const Footer: FC<FooterProps> = () => {
           border: `2px solid ${style.palette.primary.main}`,
         }}
       >
-        {/* <Typography
-          sx={{
-            color: style.palette.getContrastText(style.palette.primary.dark),
-          }}
-        >
-          © [2024] ramirezstefano.com All rights reserved.
-        </Typography>
-
-        <Typography
-          variant="body1"
-          paragraph
-          sx={{
-            marginBottom: 5,
-            color: style.palette.getContrastText(style.palette.primary.dark),
-          }}
-        >
-          6-26 Campo Real, San Rafael Alajuela, San Jose, Costa Rica
-        </Typography> */}
-
         <IconButton
           aria-label="linkedIn Button Mobile"
-          className="animate delay-3"
           onClick={() => {
             window.location.href =
               "https://www.linkedin.com/in/stefano-ramirez-novello/";
@@ -105,7 +83,6 @@ const Footer: FC<FooterProps> = () => {
           <LinkedInIcon />
         </IconButton>
         <IconButton
-          className="animate delay-3"
           sx={{
             display: {
               xs: "grid",
@@ -137,10 +114,13 @@ const Footer: FC<FooterProps> = () => {
               lg: "grid",
               xl: "grid",
             },
+            maxHeight: 36,
+            minHeight: 10,
+            alignSelf: "center",
             gridAutoFlow: "column",
           }}
         >
-          <LinkedInIcon sx={{ marginRight: 1 }} />
+          <LinkedInIcon />
           Contact me!
         </Button>
         <Button
@@ -154,6 +134,9 @@ const Footer: FC<FooterProps> = () => {
               lg: "grid",
               xl: "grid",
             },
+            maxHeight: 36,
+            minHeight: 10,
+            alignSelf: "center",
             gridAutoFlow: "column",
           }}
           onClick={() => {
@@ -163,34 +146,33 @@ const Footer: FC<FooterProps> = () => {
           <GitHubIcon sx={{ marginRight: 1 }} />
           Follow me!
         </Button>
+        <Box
+          sx={{
+            position: "fixed",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            display: {
+              xs: "grid",
+              sm: "grid",
+              md: "none",
+              lg: "none",
+              xl: "none",
+            },
+          }}
+        >
+          <BottomNavigation value={value} onChange={handleChange}>
+            <BottomNavigationAction label="About" icon={<InfoIcon />} />
+            <BottomNavigationAction label="Education" icon={<SchoolIcon />} />
+            <BottomNavigationAction label="Experience" icon={<MovingIcon />} />
+            <BottomNavigationAction
+              label="Portfolio"
+              icon={<AccountTreeIcon />}
+            />
+            <BottomNavigationAction label="Skills" icon={<ComputerIcon />} />
+          </BottomNavigation>
+        </Box>
       </Grid>
-
-      <Box
-        sx={{
-          position: "fixed",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          display: {
-            xs: "grid",
-            sm: "grid",
-            md: "none",
-            lg: "none",
-            xl: "none",
-          },
-        }}
-      >
-        <BottomNavigation value={value} onChange={handleChange}>
-          <BottomNavigationAction label="About" icon={<InfoIcon />} />
-          <BottomNavigationAction label="Education" icon={<SchoolIcon />} />
-          <BottomNavigationAction label="Experience" icon={<MovingIcon />} />
-          <BottomNavigationAction
-            label="Portfolio"
-            icon={<AccountTreeIcon />}
-          />
-          <BottomNavigationAction label="Skills" icon={<ComputerIcon />} />
-        </BottomNavigation>
-      </Box>
     </>
   );
 };

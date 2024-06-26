@@ -1,13 +1,28 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { Typography, Grid, useTheme, Paper } from "@mui/material";
 import ParticlesBg from "particles-bg";
 import codeImage from "../../assets/codeImage.jpg";
 import logoImg from "../../assets/ramirezStefanoLogo.svg";
 import "../../App.css";
+import { calculateHueRotate } from "../../utils/strings/strings";
 interface LandingPageProps {}
 
 const LandingPage: FC<LandingPageProps> = () => {
   const style = useTheme();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const rotation = scrollTop / 5; // Adjust the divisor to control the speed of rotation
+      const logo = document.getElementById("rotating-logo");
+      if (logo) {
+        logo.style.transform = `rotate(${rotation}deg)`;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
@@ -32,8 +47,6 @@ const LandingPage: FC<LandingPageProps> = () => {
             sx={{
               width: "90vw",
               "@media (max-width: 768px)": {
-                // Apply styles for xs and sm screens
-                // width: "90vw",
                 padding: 1,
                 marginBottom: 15,
                 marginTop: 4,
@@ -43,21 +56,15 @@ const LandingPage: FC<LandingPageProps> = () => {
               marginTop: 4,
             }}
           >
-            {/* sx={{ display: { xs: "none", md: "grid" }, gridAutoFlow: "column" }} */}
             <Typography className="animate delay-1" variant="h2" gutterBottom>
               Welcome to my Website!
             </Typography>
-            {/* <Typography className="animate delay-1" variant="h1" gutterBottom>
-              Welcome to my Website!
-            </Typography> */}
-
             <img
               style={{ maxWidth: "80vw", borderRadius: 16 }}
               className="animate delay-2"
               src={codeImage}
               alt="logo picture"
             />
-
             <Typography
               className="animate delay-2"
               variant={"h6"}
@@ -73,12 +80,13 @@ const LandingPage: FC<LandingPageProps> = () => {
               performance and aesthetics. Let's collaborate to elevate your
               online presence and achieve your digital goals!
             </Typography>
-
             <img
+              id="rotating-logo"
+              className="scroll-rotate"
               style={{
                 maxWidth: "80vw",
                 maxHeight: "20vh",
-                // alignSelf: "start",
+                filter: `invert(1) sepia(1) saturate(5) hue-rotate(${calculateHueRotate(style.palette.primary.main)}deg)`,
               }}
               src={logoImg}
               alt="logo picture"
