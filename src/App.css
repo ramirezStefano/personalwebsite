@@ -20,6 +20,16 @@
   transition: transform 0.05s ease-in-out;
 }
 
+.parallax {
+  background-image: url("../src//assets/codeImage.jpg");
+  min-height: 150px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 18px;
+}
+
 .delay-1 {
   animation-delay: 0.6s;
 }
