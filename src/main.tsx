@@ -7,7 +7,6 @@ import LandingPage from "./components/LandingPage/LandingPage.tsx";
 import {
   createBrowserRouter,
   createRoutesFromElements,
-  Navigate,
   Route,
   RouterProvider,
 } from "react-router-dom";
@@ -17,6 +16,7 @@ import Experience from "./components/routes/Experience/Experience.tsx";
 import Skills from "./components/routes/Skills/Skills.tsx";
 import Portfolio from "./components/routes/Portfolio/Portfolio.tsx";
 import MyThemeProvider from "./theme/MyThemeProvider.tsx";
+import ErrorPage from "./components/routes/ErrorPage/ErrorPage.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,7 +27,7 @@ const router = createBrowserRouter(
       <Route path="experience" element={<Experience />} />
       <Route path="portfolio" element={<Portfolio />} />
       <Route path="skills" element={<Skills />} />
-      <Route path="*" element={<Navigate to="/" replace={true} />} />
+      <Route path="*" element={<ErrorPage />} />
     </Route>,
   ),
   {},

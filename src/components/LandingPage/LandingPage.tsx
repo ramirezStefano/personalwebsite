@@ -1,7 +1,6 @@
 import { FC, useEffect } from "react";
-import { Typography, Grid, useTheme, Paper } from "@mui/material";
+import { Typography, Grid, useTheme, Paper, Box } from "@mui/material";
 import ParticlesBg from "particles-bg";
-import codeImage from "../../assets/codeImage.jpg";
 import logoImg from "../../assets/ramirezStefanoLogo.svg";
 import "../../App.css";
 import { calculateHueRotate } from "../../utils/strings/strings";
@@ -13,7 +12,7 @@ const LandingPage: FC<LandingPageProps> = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const rotation = scrollTop / 5; // Adjust the divisor to control the speed of rotation
+      const rotation = scrollTop / 2; // Adjust the divisor to control the speed of rotation
       const logo = document.getElementById("rotating-logo");
       if (logo) {
         logo.style.transform = `rotate(${rotation}deg)`;
@@ -59,12 +58,7 @@ const LandingPage: FC<LandingPageProps> = () => {
             <Typography className="animate delay-1" variant="h2" gutterBottom>
               Welcome to my Website!
             </Typography>
-            <img
-              style={{ maxWidth: "80vw", borderRadius: 16 }}
-              className="animate delay-2"
-              src={codeImage}
-              alt="logo picture"
-            />
+            <Box className="parallax" />
             <Typography
               className="animate delay-2"
               variant={"h6"}
