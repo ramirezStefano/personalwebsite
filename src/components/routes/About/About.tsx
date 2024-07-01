@@ -11,13 +11,21 @@ const About: FC<AboutProps> = () => {
         justifyContent="center"
         sx={{
           gridAutoFlow: "row",
-          padding: 2,
-          marginTop: 12,
-          marginBottom: 16,
+          // padding: 2,
+          // marginTop: 12,
+          // marginBottom: 16,
+          paddingBottom: 10,
+          "@media (min-width: 1024px)": {
+            paddingBottom: 20,
+          },
+          "@media (min-width: 1440px)": {
+            paddingBottom: 35,
+          },
+          // paddingTop: 12,
         }}
       >
-        <Grid item xs={12} sm={8}>
-          <Paper className={"animate"} sx={{ padding: 2, marginBottom: 4 }}>
+        <Grid item xs={12} sm={8} sx={{ paddingTop: 15 }}>
+          <Paper className={"animate"} sx={{ padding: 2, margin: 2 }}>
             <Typography className={"animate delay-1"} variant="h4" gutterBottom>
               About Me
             </Typography>

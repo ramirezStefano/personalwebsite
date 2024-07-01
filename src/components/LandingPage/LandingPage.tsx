@@ -29,10 +29,15 @@ const LandingPage: FC<LandingPageProps> = () => {
         display={"grid"}
         container
         sx={{
-          marginTop: 12,
-          marginBottom: 8,
           justifyContent: "center",
           alignContent: "center",
+          paddingBottom: 10,
+          "@media (min-width: 1024px)": {
+            paddingBottom: 20,
+          },
+          "@media (min-width: 1440px)": {
+            paddingBottom: 35,
+          },
         }}
       >
         <Grid
@@ -40,6 +45,7 @@ const LandingPage: FC<LandingPageProps> = () => {
           sx={{
             alignSelf: "center",
             justifySelf: "center",
+            paddingTop: 10,
           }}
         >
           <Paper

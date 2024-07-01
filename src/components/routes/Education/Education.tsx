@@ -7,13 +7,14 @@ const Education: FC<EducationProps> = () => {
   return (
     <Grid
       container
-      sx={{ justifyContent: "center", padding: 2, marginTop: 12 }}
+      justifyContent="center"
+      sx={{
+        gridAutoFlow: "row",
+        height: "100vh",
+      }}
     >
-      <Grid item xs={12} sm={8}>
-        <Paper
-          className={"animate delay-1"}
-          sx={{ padding: 2, marginBottom: 4 }}
-        >
+      <Grid item xs={12} sm={8} sx={{ paddingTop: 15 }}>
+        <Paper className={"animate delay-1"} sx={{ padding: 2, margin: 2 }}>
           <Typography className={"animate delay-2"} variant="h4" gutterBottom>
             Education
           </Typography>

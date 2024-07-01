@@ -11,9 +11,13 @@ const Portfolio: FC<PortfolioProps> = () => {
       <Grid
         container
         justifyContent="center"
-        sx={{ padding: 2, marginTop: 12, marginBottom: 14 }}
+        sx={{
+          gridAutoFlow: "row",
+          height: "100vh",
+          padding: 2,
+        }}
       >
-        <Grid item xs={12} sm={8}>
+        <Grid item xs={12} sm={8} sx={{ paddingTop: 15 }}>
           <Paper
             className={"animate delay-1"}
             sx={{ padding: 2, marginBottom: 4 }}
