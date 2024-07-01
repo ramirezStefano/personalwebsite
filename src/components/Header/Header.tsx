@@ -43,12 +43,28 @@ const Header: FC = () => {
   };
 
   return (
-    <AppBar position="fixed">
+    <AppBar
+      position="fixed"
+      sx={{
+        background: "rgba(0, 0, 0, 0.5)", // Semi-transparent background
+        backdropFilter: "blur(10px)", // Blur effect
+        // borderRadius: "10px", // Rounded corners
+        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.5)", // Subtle shadow
+      }}
+    >
       <Grid
         display="grid"
         gridAutoColumns={"column"}
         gridTemplateColumns={"1fr, 1fr, 1fr"}
         justifyContent={"space-around"}
+        sx={
+          {
+            // background: "rgba(0, 0, 0, 1)", // Semi-transparent background
+            // backdropFilter: "blur(10px)", // Blur effect
+            // borderRadius: "10px", // Rounded corners
+            // boxShadow: "0 4px 6px rgba(0, 0, 0, 0.5)", // Subtle shadow
+          }
+        }
       >
         <Toolbar disableGutters>
           <img
