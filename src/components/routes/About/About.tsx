@@ -11,9 +11,6 @@ const About: FC<AboutProps> = () => {
         justifyContent="center"
         sx={{
           gridAutoFlow: "row",
-          // padding: 2,
-          // marginTop: 12,
-          // marginBottom: 16,
           paddingBottom: 10,
           "@media (min-width: 1024px)": {
             paddingBottom: 20,

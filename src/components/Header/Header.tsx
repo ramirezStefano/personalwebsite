@@ -13,7 +13,7 @@ import logo from "../../assets/ramirezStefanoLogo.svg";
 import "../../App.css";
 import { calculateHueRotate } from "../../utils/strings/strings";
 
-const pages = ["About", "Education", "Experience", "Skills", "Portfolio"];
+const pages = ["Education", "Experience", "Skills", "Portfolio"];
 
 const Header: FC = () => {
   const navigate = useNavigate();
@@ -22,9 +22,6 @@ const Header: FC = () => {
   const handleTopNavButtons = (event: React.MouseEvent<HTMLElement>) => {
     const buttonText: string = event.currentTarget.innerText.toLowerCase();
     switch (buttonText) {
-      case "about":
-        navigate("/about/");
-        break;
       case "education":
         navigate("/education/");
         break;

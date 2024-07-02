@@ -21,13 +21,53 @@
 }
 
 .parallax {
-  background-image: url("../src//assets/codeImage.jpg");
+  background-image: url("../src/assets/codeImage.jpg");
   min-height: 150px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 18px;
+}
+.parallax-education {
+  background-image: url("../src/assets/codeImage2.jpg");
+  min-height: 150px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 18px;
+  margin-bottom: 16px;
+}
+.parallax-experience {
+  background-image: url("../src/assets/codeImage3.jpg");
+  min-height: 150px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 18px;
+  margin-bottom: 16px;
+}
+.parallax-skills {
+  background-image: url("../src/assets/codeImage5.jpg");
+  min-height: 150px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 18px;
+  margin-bottom: 16px;
+}
+.parallax-portfolio {
+  background-image: url("../src/assets/codeImage4.jpg");
+  min-height: 150px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 18px;
+  margin-bottom: 16px;
 }
 
 .delay-1 {

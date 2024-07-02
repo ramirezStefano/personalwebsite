@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Grid, Paper, Typography } from "@mui/material";
+import { Box, Grid, Paper, Typography } from "@mui/material";
 import "../../../App.css";
 
 interface ExperienceProps {}
@@ -12,14 +12,13 @@ const Experience: FC<ExperienceProps> = () => {
         justifyContent="center"
         sx={{ padding: 2, height: "100vh" }}
       >
-        <Grid item xs={12} sm={8} sx={{ paddingTop: 15 }}>
-          <Paper
-            className={"animate delay-1"}
-            sx={{ padding: 2, marginBottom: 4 }}
-          >
+        <Grid item xs={12} sm={8} sx={{ paddingY: 15 }}>
+          <Paper className={"animate delay-1"} sx={{ padding: 2 }}>
             <Typography className={"animate delay-2"} variant="h4" gutterBottom>
               Experience
             </Typography>
+            <Box className="parallax-experience" />
+
             <Typography className={"animate delay-3"} variant="body1" paragraph>
               KPMG Costa Rica IT Governance Intern Delved into Visual Basic for
               Applications, IT governance practices, and discrete mathematics

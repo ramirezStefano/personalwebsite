@@ -10,7 +10,7 @@ function App() {
     <>
       <Grid
         sx={{
-          background: `linear-gradient(to bottom, ${style.palette.primary.main}, ${style.palette.secondary.light})`, // Updated background with transparency
+          background: `linear-gradient(to bottom, ${style.palette.primary.main}, ${style.palette.secondary.light})`,
         }}
       >
         <Header />
