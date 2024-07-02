@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Grid, Paper, Typography } from "@mui/material";
+import { Box, Grid, Paper, Typography } from "@mui/material";
 import "../../../App.css";
 interface SkillsProps {}
 
@@ -19,6 +19,8 @@ const Skills: FC<SkillsProps> = () => {
             <Typography className={"animate delay-2"} variant="h4" gutterBottom>
               Skills
             </Typography>
+            <Box className="parallax-skills" />
+
             <Typography className={"animate delay-3"} variant="body1" paragraph>
               Languages: JavaScript (Node.js), TypeScript, Python, Java, Ruby on
               Rails, C

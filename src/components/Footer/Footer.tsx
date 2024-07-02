@@ -3,7 +3,6 @@ import { Grid, Button, IconButton } from "@mui/material";
 import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import InfoIcon from "@mui/icons-material/Info";
 import SchoolIcon from "@mui/icons-material/School";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
 import ComputerIcon from "@mui/icons-material/Computer";
@@ -25,18 +24,15 @@ const Footer: FC<FooterProps> = () => {
     setValue(newValue);
     switch (newValue) {
       case 0:
-        navigate("/about/");
-        break;
-      case 1:
         navigate("/education");
         break;
-      case 2:
+      case 1:
         navigate("/experience/");
         break;
-      case 3:
+      case 2:
         navigate("/portfolio/");
         break;
-      case 4:
+      case 3:
         navigate("/skills/");
         break;
       default:
@@ -162,7 +158,6 @@ const Footer: FC<FooterProps> = () => {
           }}
         >
           <BottomNavigation value={value} onChange={handleChange}>
-            <BottomNavigationAction label="About" icon={<InfoIcon />} />
             <BottomNavigationAction label="Education" icon={<SchoolIcon />} />
             <BottomNavigationAction label="Experience" icon={<MovingIcon />} />
             <BottomNavigationAction
