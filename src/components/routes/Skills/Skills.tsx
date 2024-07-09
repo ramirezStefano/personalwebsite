@@ -9,7 +9,7 @@ const Skills: FC<SkillsProps> = () => {
       <Grid
         container
         justifyContent="center"
-        sx={{ gridAutoFlow: "row", height: "100vh", padding: 2 }}
+        sx={{ gridAutoFlow: "row", padding: 2, minHeight: "100vh" }}
       >
         <Grid item xs={12} sm={8} sx={{ paddingTop: 15 }}>
           <Paper
@@ -20,7 +20,6 @@ const Skills: FC<SkillsProps> = () => {
               Skills
             </Typography>
             <Box className="parallax-skills" />
-
             <Typography className={"animate delay-3"} variant="body1" paragraph>
               Languages: JavaScript (Node.js), TypeScript, Python, Java, Ruby on
               Rails, C

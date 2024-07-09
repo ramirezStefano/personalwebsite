@@ -54,14 +54,6 @@ const Header: FC = () => {
         gridAutoColumns={"column"}
         gridTemplateColumns={"1fr, 1fr, 1fr"}
         justifyContent={"space-around"}
-        sx={
-          {
-            // background: "rgba(0, 0, 0, 1)", // Semi-transparent background
-            // backdropFilter: "blur(10px)", // Blur effect
-            // borderRadius: "10px", // Rounded corners
-            // boxShadow: "0 4px 6px rgba(0, 0, 0, 0.5)", // Subtle shadow
-          }
-        }
       >
         <Toolbar disableGutters>
           <img
@@ -75,7 +67,6 @@ const Header: FC = () => {
               filter: `invert(1) sepia(1) saturate(5) hue-rotate(${calculateHueRotate(style.palette.primary.main)}deg)`, // Adjust filter properties
             }}
           />
-
           <Typography
             variant={window.innerWidth <= 768 ? "h6" : "h5"}
             component="a"

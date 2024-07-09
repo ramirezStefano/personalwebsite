@@ -40,7 +40,32 @@ export default function MyThemeProvider(props: MyThemeProviderProps) {
   );
 
   const _theme = React.useMemo(
-    () => createTheme(ThemeColors[theme][mode] as ThemeOptions),
+    () =>
+      createTheme({
+        ...(ThemeColors[theme][mode] as ThemeOptions),
+        typography: {
+          h4: {
+            color: ThemeColors[theme].dark.palette.primary?.main,
+            fontSize: "2rem",
+            fontWeight: "bold",
+            textTransform: "uppercase",
+            letterSpacing: "1px",
+          },
+          h5: {
+            color: ThemeColors[theme].dark.palette.secondary?.main,
+            fontSize: "1rem",
+            fontWeight: "bold",
+            textTransform: "uppercase",
+            letterSpacing: "1px",
+          },
+          body1: {
+            fontSize: "1rem",
+            lineHeight: 2,
+            marginBottom: "1em",
+            color: ThemeColors[theme].dark.palette.secondary?.dark,
+          },
+        },
+      }),
     [mode, theme],
   );
 

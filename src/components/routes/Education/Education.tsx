@@ -11,7 +11,9 @@ const Education: FC<EducationProps> = () => {
       justifyContent="center"
       sx={{
         gridAutoFlow: "row",
-        height: "100vh",
+        padding: 2,
+        paddingBottom: 10,
+        minHeight: "100vh",
       }}
     >
       <Grid item xs={12} sm={8} sx={{ paddingY: 15 }}>

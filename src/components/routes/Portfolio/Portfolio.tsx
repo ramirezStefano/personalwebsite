@@ -9,6 +9,20 @@ import {
   useTheme,
 } from "@mui/material";
 import "../../../App.css";
+import ts from "../../../assets/typescript.svg";
+import html from "../../../assets/html5.svg";
+import mui from "../../../assets/mui.svg";
+import axios from "../../../assets/axios.svg";
+import firebase from "../../../assets/firebaseIcon.svg";
+import json from "../../../assets/jsonIcon.svg";
+import router from "../../../assets/reactRouterIcon.svg";
+import storybook from "../../../assets/storybookIcon.svg";
+import react from "../../../assets/react.svg";
+import redux from "../../../assets/redux.svg";
+import pnpm from "../../../assets/pnpmIcon.svg";
+import markdown from "../../../assets/markdownIcon.svg";
+import prettier from "../../../assets/prettierIcon.svg";
+import css from "../../../assets/cssIcon.svg";
 interface PortfolioProps {}
 
 const Portfolio: FC<PortfolioProps> = () => {
@@ -21,7 +35,8 @@ const Portfolio: FC<PortfolioProps> = () => {
         sx={{
           gridAutoFlow: "row",
           padding: 2,
-          paddingBottom: 10,
+          paddingBottom: 12,
+          minHeight: "100vh",
         }}
       >
         <Grid item xs={12} sm={8} sx={{ paddingTop: 15 }}>
@@ -38,7 +53,6 @@ const Portfolio: FC<PortfolioProps> = () => {
               Portfolio
             </Typography>
             <Box className="parallax-portfolio" />
-
             <Typography className={"animate delay-4"} variant="h5" gutterBottom>
               HoneyGrid
             </Typography>
@@ -48,13 +62,64 @@ const Portfolio: FC<PortfolioProps> = () => {
               then moved to the main react node application on web.
             </Typography>
             <Typography className={"animate delay-6"} variant="body1" paragraph>
-              Technologies Used: List of technologies used in the project. Link:
+              Main Technologies Used:
             </Typography>
+            <Grid
+              container
+              display={"grid"}
+              gridTemplateColumns={"repeat(3, 1fr)"}
+              gap={2}
+              alignItems={"center"}
+              justifyItems={"center"}
+              marginY={4}
+            >
+              <Grid item>
+                <img alt="TypeScript_icon" src={ts} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="HTML_icon" src={html} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="React_icon" src={react} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="Redux_icon" src={redux} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="MUI_icon" src={mui} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="Axios_icon" src={axios} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="Firebase_icon" src={firebase} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="JSON_icon" src={json} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="ReactRouter_icon" src={router} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="Storybook_icon" src={storybook} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="Pnpm_icon" src={pnpm} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="Markdown_icon" src={markdown} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="Prettier_icon" src={prettier} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="CSS_icon" src={css} width={50} />
+              </Grid>
+            </Grid>
             <Typography className={"animate delay-7"} variant="body1" paragraph>
               Sadly this is a private repository but you can check out the
               amazing product we built.
             </Typography>
-
             <Button
               variant="outlined"
               href="https://honeygrid.ai/"
@@ -62,9 +127,7 @@ const Portfolio: FC<PortfolioProps> = () => {
             >
               Checkout HoneyGrid here!
             </Button>
-
             <Divider />
-
             <Typography
               className={"animate delay-4"}
               variant="h5"
@@ -81,9 +144,47 @@ const Portfolio: FC<PortfolioProps> = () => {
               building and deployment using github actions and github pages.
             </Typography>
             <Typography className={"animate delay-6"} variant="body1" paragraph>
-              Technologies Used: List of technologies used in the project. Link:
+              Main Technologies Used:
             </Typography>
 
+            <Grid
+              container
+              display={"grid"}
+              gridTemplateColumns={"repeat(3, 1fr)"}
+              gap={2}
+              alignItems={"center"}
+              justifyItems={"center"}
+              marginY={4}
+            >
+              <Grid item>
+                <img alt="TypeScript_icon" src={ts} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="HTML_icon" src={html} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="React_icon" src={react} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="Axios_icon" src={axios} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="JSON_icon" src={json} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="Storybook_icon" src={storybook} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="Markdown_icon" src={markdown} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="Prettier_icon" src={prettier} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="CSS_icon" src={css} width={50} />
+              </Grid>
+              <Grid item></Grid>
+            </Grid>
             <Button
               variant="outlined"
               href="https://github.com/evargast/signature-generator"
@@ -92,7 +193,6 @@ const Portfolio: FC<PortfolioProps> = () => {
               Checkout our email signature generator here!
             </Button>
             <Divider />
-
             <Typography
               className={"animate delay-4"}
               variant="h5"
@@ -110,6 +210,50 @@ const Portfolio: FC<PortfolioProps> = () => {
               under development with constant refactors where needed and
               updates.
             </Typography>
+            <Typography>Main Technologies Used:</Typography>
+            <Grid
+              container
+              display={"grid"}
+              gridTemplateColumns={"repeat(3, 1fr)"}
+              gap={2}
+              alignItems={"center"}
+              justifyItems={"center"}
+              marginY={4}
+            >
+              <Grid item>
+                <img alt="TypeScript_icon" src={ts} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="HTML_icon" src={html} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="React_icon" src={react} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="MUI_icon" src={mui} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="JSON_icon" src={json} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="ReactRouter_icon" src={router} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="Storybook_icon" src={storybook} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="Pnpm_icon" src={pnpm} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="Markdown_icon" src={markdown} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="Prettier_icon" src={prettier} width={50} />
+              </Grid>
+              <Grid item>
+                <img alt="CSS_icon" src={css} width={50} />
+              </Grid>
+            </Grid>
             <Typography className={"animate delay-6"} variant="body1" paragraph>
               Link to the repo:
             </Typography>
@@ -122,9 +266,7 @@ const Portfolio: FC<PortfolioProps> = () => {
                 Here!
               </Button>
             </Typography>
-
             <Divider />
-
             <Typography variant="body1" paragraph marginTop={4}>
               Other: CLI Unix Commands, Assembly Language (LC3), Markdown
             </Typography>
