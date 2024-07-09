@@ -12,6 +12,9 @@ import { useNavigate } from "react-router-dom";
 import { useTheme } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import DownloadIcon from "@mui/icons-material/Download";
+import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
+import resume from "../../assets/pdf/CV STEFANO RAMIREZ.pdf";
 
 interface FooterProps {}
 
@@ -79,6 +82,24 @@ const Footer: FC<FooterProps> = () => {
           <LinkedInIcon />
         </IconButton>
         <IconButton
+          aria-label="linkedIn Button Mobile"
+          onClick={() => {
+            window.open(resume, "_blank");
+          }}
+          sx={{
+            display: {
+              xs: "grid",
+              sm: "grid",
+              md: "none",
+              lg: "none",
+              xl: "none",
+            },
+            marginBottom: 50,
+          }}
+        >
+          <PictureAsPdfIcon />
+        </IconButton>
+        <IconButton
           sx={{
             display: {
               xs: "grid",
@@ -118,6 +139,29 @@ const Footer: FC<FooterProps> = () => {
         >
           <LinkedInIcon />
           Contact me!
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          sx={{
+            display: {
+              xs: "none",
+              sm: "none",
+              md: "grid",
+              lg: "grid",
+              xl: "grid",
+            },
+            maxHeight: 36,
+            minHeight: 10,
+            alignSelf: "center",
+            gridAutoFlow: "column",
+          }}
+          onClick={() => {
+            window.open(resume, "_blank");
+          }}
+        >
+          <DownloadIcon />
+          Download Resume
         </Button>
         <Button
           variant="contained"
