@@ -10,7 +10,12 @@ const Experience: FC<ExperienceProps> = () => {
       <Grid
         container
         justifyContent="center"
-        sx={{ padding: 2, height: "100vh" }}
+        sx={{
+          gridAutoFlow: "row",
+          padding: 2,
+          paddingBottom: 10,
+          minHeight: "100vh",
+        }}
       >
         <Grid item xs={12} sm={8} sx={{ paddingY: 15 }}>
           <Paper className={"animate delay-1"} sx={{ padding: 2 }}>

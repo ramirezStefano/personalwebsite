@@ -15,7 +15,7 @@ export const theme: AppTheme = {
       }),
       secondary: palette.augmentColor({
         color: {
-          main: "#4fd8eb",
+          main: "#af1700",
           contrastText: "#00363d",
         },
       }),
@@ -83,13 +83,13 @@ export const theme: AppTheme = {
       mode: "light",
       primary: palette.augmentColor({
         color: {
-          main: "#bd0b25",
+          main: "#cc4800",
           contrastText: "#ffffff",
         },
       }),
       secondary: palette.augmentColor({
         color: {
-          main: "#006874",
+          main: "#af1700",
           contrastText: "#ffffff",
         },
       }),
