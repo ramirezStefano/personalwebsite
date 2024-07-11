@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Box, Divider, Grid, Paper, Typography } from "@mui/material";
 import "../../../App.css";
+import { ChevronRight } from "@mui/icons-material";
 
 interface EducationProps {}
 
@@ -23,21 +24,67 @@ const Education: FC<EducationProps> = () => {
           </Typography>
           <Box className="parallax-education" />
 
-          <Typography className={"animate delay-3"} variant="body1" paragraph>
-            British School of Costa Rica International Baccalaureate Diploma
-            with Higher Levels in Computer Science, English, and Physics.
-          </Typography>
+          <Grid
+            display={"grid"}
+            container
+            gridAutoFlow={"column"}
+            justifyContent={"center"}
+            alignItems={"center"}
+            className="animate delay-2"
+          >
+            <ChevronRight />
+            <Typography className={"animate delay-3"} variant="body1" paragraph>
+              British School of Costa Rica International Baccalaureate Diploma
+              with Higher Levels classes in Computer Science, English Language
+              and Literature, and Physics.
+            </Typography>
+          </Grid>
           <Divider className={"animate delay-4"} />
-          <Typography className={"animate delay-5"} paragraph marginTop={2}>
-            Higher education at University of California, Santa Cruz (UCSC)
-            Pursued a degree in Computer Science.
-          </Typography>
+          <Grid
+            display={"grid"}
+            container
+            gridAutoFlow={"column"}
+            justifyContent={"center"}
+            alignItems={"center"}
+            className="animate delay-2"
+          >
+            <ChevronRight />
+            <Typography className={"animate delay-5"} paragraph marginTop={2}>
+              Higher education at University of California, Santa Cruz (UCSC)
+              Pursued a degree in Computer Science B.S.
+            </Typography>
+          </Grid>
           <Divider className={"animate delay-4"} />
 
-          <Typography className={"animate delay-6"} paragraph marginTop={2}>
-            Github Workshops at (UCSC). LinkedIn Certified in Career Skills in
-            Software Development.
-          </Typography>
+          <Grid
+            display={"grid"}
+            container
+            gridAutoFlow={"column"}
+            justifyContent={"center"}
+            alignItems={"center"}
+            className="animate delay-2"
+          >
+            <ChevronRight />
+            <Typography paragraph marginTop={2}>
+              Github Workshops at (UCSC) Multi day workshop give by UC Berkley
+              professor on the use of GitHub and best practices.
+            </Typography>
+          </Grid>
+          <Divider />
+          <Grid
+            display={"grid"}
+            container
+            gridAutoFlow={"column"}
+            justifyContent={"center"}
+            alignItems={"center"}
+            alignContent={"center"}
+            className="animate delay-2"
+          >
+            <ChevronRight />
+            <Typography marginTop={2}>
+              LinkedIn Certified in Career Skills in Software Development.
+            </Typography>
+          </Grid>
         </Paper>
       </Grid>
     </Grid>
