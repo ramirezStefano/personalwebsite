@@ -77,6 +77,7 @@ const Footer: FC<FooterProps> = () => {
               xl: "none",
             },
             marginBottom: 50,
+            color: style.palette.text.secondary,
           }}
         >
           <LinkedInIcon />
@@ -94,6 +95,7 @@ const Footer: FC<FooterProps> = () => {
               lg: "none",
               xl: "none",
             },
+            color: style.palette.text.secondary,
             marginBottom: 50,
           }}
         >
@@ -108,6 +110,7 @@ const Footer: FC<FooterProps> = () => {
               lg: "none",
               xl: "none",
             },
+            color: style.palette.text.secondary,
             marginBottom: 50,
           }}
           onClick={() => {

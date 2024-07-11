@@ -44,6 +44,13 @@ export default function MyThemeProvider(props: MyThemeProviderProps) {
       createTheme({
         ...(ThemeColors[theme][mode] as ThemeOptions),
         typography: {
+          h3: {
+            color: ThemeColors[theme].dark.palette.primary?.main,
+            fontSize: "2rem",
+            fontWeight: "bold",
+            textTransform: "uppercase",
+            letterSpacing: "1px",
+          },
           h4: {
             color: ThemeColors[theme].dark.palette.primary?.main,
             fontSize: "2rem",
@@ -56,6 +63,13 @@ export default function MyThemeProvider(props: MyThemeProviderProps) {
             fontSize: "1rem",
             fontWeight: "bold",
             textTransform: "uppercase",
+            letterSpacing: "1px",
+          },
+          h6: {
+            color: ThemeColors[theme].dark.palette.secondary?.dark,
+            fontSize: "0.8rem",
+            fontWeight: "bold",
+            // textTransform: "uppercase",
             letterSpacing: "1px",
           },
           body1: {

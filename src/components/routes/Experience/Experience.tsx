@@ -29,6 +29,18 @@ const Experience: FC<ExperienceProps> = () => {
               Applications, IT governance practices, and discrete mathematics
               under the guidance of industry experts.
             </Typography>
+            <Typography className={"animate delay-3"} variant="body1" paragraph>
+              ProIntel Intern, developed bespoke java software tailored to the
+              requirement and specifications of a task handling system to
+              centralize ongoing processes and new tickets .
+            </Typography>
+            <Typography className={"animate delay-3"} variant="body1" paragraph>
+              Cervecera del Centro Intern, developed a self assisting ruby on
+              rails program to keep track of brew batches and processes, with
+              timers and input forms to ask for the beer recipes sequential
+              steps I was able to lower human error and produce high quality
+              beer under the brewmaster supervision.
+            </Typography>
             <Typography className={"animate delay-4"} variant="body1" paragraph>
               HoneyGrid Web Development Engineer Collaborated with a talented
               team to develop cutting-edge web applications using React,
