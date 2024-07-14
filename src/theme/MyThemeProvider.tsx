@@ -66,7 +66,7 @@ export default function MyThemeProvider(props: MyThemeProviderProps) {
             letterSpacing: "1px",
           },
           h6: {
-            color: ThemeColors[theme].dark.palette.secondary?.dark,
+            // color: ThemeColors[theme].dark.palette.secondary?.dark,
             fontSize: "0.8rem",
             fontWeight: "bold",
             // textTransform: "uppercase",
@@ -76,7 +76,7 @@ export default function MyThemeProvider(props: MyThemeProviderProps) {
             fontSize: "1rem",
             lineHeight: 2,
             marginBottom: "1em",
-            color: ThemeColors[theme].dark.palette.secondary?.dark,
+            // color: ThemeColors[theme].dark.palette.secondary?.dark,
           },
         },
       }),
