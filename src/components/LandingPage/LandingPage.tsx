@@ -91,11 +91,12 @@ const LandingPage: FC<LandingPageProps> = () => {
                 borderRadius: 16,
                 margin: 16,
               }}
+              className="animate delay-3"
               src={portrait}
               alt="portrait-picture"
             />
 
-            <Typography className={"animate delay-2"} variant="body1" paragraph>
+            <Typography className={"animate delay-4"} variant="body1" paragraph>
               I'm a passionate web development engineer from the beautiful land
               of Costa Rica. My journey into proper programming started at the
               British School of Costa Rica, where I delved into the complexities
@@ -104,7 +105,7 @@ const LandingPage: FC<LandingPageProps> = () => {
               coding. Before that I started experimenting with my first lines of
               Java at the young age of 11.
             </Typography>
-            <Typography className={"animate delay-3"} variant="body1" paragraph>
+            <Typography className={"animate delay-5"} variant="body1" paragraph>
               Fast forward through internships and educational pursuits, I found
               myself at KPMG Costa Rica, where I immersed myself in the realm of
               IT governance. Under the mentorship of Luis Rivera (IT governance
@@ -123,21 +124,21 @@ const LandingPage: FC<LandingPageProps> = () => {
               src={logoImg}
               alt="logo picture"
             />
-            <Typography className={"animate delay-4"} variant="body1" paragraph>
+            <Typography className={"animate delay-6"} variant="body1" paragraph>
               My thirst for knowledge led me to UCSC for a computer science
               undergrad, where I expanded my repertoire to include a myriad of
               languages and tools, from C and Java to Python. Alongside CLI Unix
               commands and Git, I dabbled in assembly language and advanced
               Java, enriching my understanding of software development.
             </Typography>
-            <Typography className={"animate delay-5"} variant="body1" paragraph>
+            <Typography className={"animate delay-7"} variant="body1" paragraph>
               My professional journey continued at HoneyGrid, where I had the
               privilege of working alongside a talented team led by James
               Delorey, a seasoned software engineer from Adobe. Here, I immersed
               myself in the latest frontend technologies, crafting dynamic
               applications.
             </Typography>
-            <Typography className={"animate delay-6"} variant="body1">
+            <Typography className={"animate delay-8"} variant="body1">
               Feel free to reach out to me if you have any questions or would
               like to discuss a potential collaboration.
             </Typography>

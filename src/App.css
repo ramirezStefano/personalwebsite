@@ -92,7 +92,31 @@
   animation-delay: 1.8s;
 }
 .delay-8 {
-  animation-delay: 2s;
+  animation-delay: 2.2s;
+}
+.delay-9 {
+  animation-delay: 2.4s;
+}
+.delay-10 {
+  animation-delay: 2.6s;
+}
+.delay-11 {
+  animation-delay: 2.8s;
+}
+.delay-12 {
+  animation-delay: 3s;
+}
+.delay-13 {
+  animation-delay: 3.2s;
+}
+.delay-14 {
+  animation-delay: 3.4s;
+}
+.delay-15 {
+  animation-delay: 3.6s;
+}
+.delay-16 {
+  animation-delay: 3.8s;
 }
 
 @keyframes animate-fade {
