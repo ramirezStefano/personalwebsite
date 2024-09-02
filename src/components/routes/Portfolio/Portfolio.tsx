@@ -93,6 +93,7 @@ const Portfolio: FC<PortfolioProps> = () => {
               alignItems={"center"}
               justifyItems={"center"}
               marginY={4}
+              className={"animate delay-7"}
             >
               <Grid item>
                 <img alt="React_icon" src={react} width={50} />
