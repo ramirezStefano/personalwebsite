@@ -1,5 +1,13 @@
 import { FC, useEffect } from "react";
-import { Typography, Grid, useTheme, Paper, Box } from "@mui/material";
+import {
+  Typography,
+  Grid,
+  useTheme,
+  Paper,
+  Box,
+  TextField,
+  Button,
+} from "@mui/material";
 import logoImg from "../../assets/ramirezStefanoLogo.svg";
 import portrait from "../../assets/picture.jpeg";
 import "../../App.css";
@@ -142,6 +150,21 @@ const LandingPage: FC<LandingPageProps> = () => {
               Feel free to reach out to me if you have any questions or would
               like to discuss a potential collaboration.
             </Typography>
+
+            <Grid
+              item
+              display={"grid"}
+              maxWidth="50vw"
+              margin="0 auto"
+              marginY={4}
+              gap={2}
+            >
+              <Typography variant="h4">Let Get in Touch!</Typography>
+              <TextField label="Name" disabled></TextField>
+              <TextField label="Email" disabled></TextField>
+              <TextField label="Message" disabled></TextField>
+              <Button disabled>Send!</Button>
+            </Grid>
           </Paper>
         </Grid>
       </Grid>
