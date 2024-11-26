@@ -12,6 +12,7 @@ import logoImg from "../../assets/ramirezStefanoLogo.svg";
 import portrait from "../../assets/picture.jpeg";
 import "../../App.css";
 import { calculateHueRotate } from "../../utils/strings/strings";
+import { RSSFeed } from "../RSSFeed/RSSFeed";
 interface LandingPageProps {}
 
 const LandingPage: FC<LandingPageProps> = () => {
@@ -151,7 +152,7 @@ const LandingPage: FC<LandingPageProps> = () => {
               like to discuss a potential collaboration.
             </Typography>
 
-            <Grid
+            {/* <Grid
               item
               display={"grid"}
               maxWidth="50vw"
@@ -159,12 +160,13 @@ const LandingPage: FC<LandingPageProps> = () => {
               marginY={4}
               gap={2}
             >
-              <Typography variant="h4">Let Get in Touch!</Typography>
+              <Typography variant="h4"> Get in Touch!</Typography>
               <TextField label="Name" disabled></TextField>
               <TextField label="Email" disabled></TextField>
               <TextField label="Message" disabled></TextField>
               <Button disabled>Send!</Button>
-            </Grid>
+            </Grid> */}
+            <RSSFeed />
           </Paper>
         </Grid>
       </Grid>
