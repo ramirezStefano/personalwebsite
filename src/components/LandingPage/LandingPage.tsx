@@ -1,151 +1,129 @@
 import { FC, useEffect } from "react";
-import { Typography, Grid, useTheme, Paper, Box } from "@mui/material";
+import { Box, Grid, Paper, Typography, useTheme } from "@mui/material";
 import logoImg from "../../assets/ramirezStefanoLogo.svg";
 import portrait from "../../assets/picture.jpeg";
 import "../../App.css";
 import { calculateHueRotate } from "../../utils/strings/strings";
-interface LandingPageProps {}
 
-const LandingPage: FC<LandingPageProps> = () => {
-  const style = useTheme();
+const LandingPage: FC = () => {
+  const theme = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const rotation = scrollTop / 2;
       const logo = document.getElementById("rotating-logo");
-      if (logo) {
-        logo.style.transform = `rotate(${rotation}deg)`;
-      }
+      if (logo) logo.style.transform = `rotate(${scrollTop / 2}deg)`;
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <>
-      <Grid
-        display={"grid"}
-        container
-        sx={{
-          justifyContent: "center",
-          alignContent: "center",
-          paddingBottom: 10,
-          "@media (min-width: 1024px)": {
-            paddingBottom: 20,
-          },
-          "@media (min-width: 1440px)": {
-            paddingBottom: 35,
-          },
-        }}
-      >
-        <Grid
-          item
+    <Grid container justifyContent="center" sx={{ minHeight: "100vh", pt: 12, pb: 15, px: 2 }}>
+      <Grid item xs={12} sm={10} md={8}>
+
+        {/* Hero */}
+        <Box
+          className="animate delay-1"
           sx={{
-            alignSelf: "center",
-            justifySelf: "center",
-            paddingTop: 10,
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            alignItems: "center",
+            gap: { xs: 3, md: 5 },
+            mb: 6,
+            textAlign: { xs: "center", md: "left" },
           }}
         >
-          <Paper
+          <Box
             sx={{
-              width: "90vw",
-              "@media (max-width: 768px)": {
-                padding: 1,
-                marginBottom: 15,
-                marginTop: 4,
-              },
-              padding: 1,
-              marginBottom: 20,
-              marginTop: 4,
+              width: { xs: 160, md: 220 },
+              height: { xs: 160, md: 220 },
+              flexShrink: 0,
+              borderRadius: "50%",
+              overflow: "hidden",
+              border: `4px solid ${theme.palette.primary.main}`,
+              boxShadow: `0 0 36px ${theme.palette.primary.main}55`,
             }}
           >
-            <Typography
-              className="animate delay-1"
-              variant="h2"
-              gutterBottom
-              marginTop={4}
-              sx={{
-                color: "primary.main",
-              }}
-            >
-              Welcome to my Website!
+            <img
+              src={portrait}
+              alt="Stefano Ramirez"
+              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }}
+            />
+          </Box>
+
+          <Box>
+            <Typography variant="h4" className="animate delay-1" gutterBottom>
+              Stefano Ramirez
             </Typography>
-            <Box className="parallax" />
             <Typography
               className="animate delay-2"
-              variant={"h6"}
-              sx={{ marginTop: 4, marginBottom: 0 }}
-            >
-              Hi there! My name is Stefano Ramirez, I specialize in web
-              development, utilizing cutting-edge technologies like React, Vite,
-              and Material UI to create exceptional digital solutions. With
-              meticulous attention to detail.
-            </Typography>
-            <img
-              style={{
-                maxWidth: "80vw",
-                maxHeight: "20vh",
-                filter: "grayscale(100%)",
-                borderRadius: 16,
-                margin: 16,
+              sx={{
+                color: theme.palette.primary.main,
+                fontSize: "1rem",
+                fontWeight: 600,
+                textTransform: "uppercase",
+                letterSpacing: "2px",
+                mb: 1,
               }}
-              className="animate delay-3"
-              src={portrait}
-              alt="portrait-picture"
-            />
-
-            <Typography className={"animate delay-4"} variant="body1" paragraph>
-              I'm a passionate web development engineer from the beautiful land
-              of Costa Rica. My journey into proper programming started at the
-              British School of Costa Rica, where I delved into the complexities
-              of computer science alongside subjects like English and Physics.
-              It was during this time that I fell in love with the art of
-              coding. Before that I started experimenting with my first lines of
-              Java at the young age of 11.
+            >
+              Web Development Engineer
             </Typography>
-            <Typography className={"animate delay-5"} variant="body1" paragraph>
-              Fast forward through internships and educational pursuits, I found
-              myself at KPMG Costa Rica, where I immersed myself in the realm of
-              IT governance. Under the mentorship of Luis Rivera (IT governance
-              director), I delved into the world of Visual Basic for
-              Applications, creating super macros that automated internal
-              processes and sparked my interest in discrete mathematics.
+            <Typography
+              className="animate delay-3"
+              variant="body2"
+              sx={{ color: "text.secondary", mb: 2.5 }}
+            >
+              San José, Costa Rica · React · TypeScript · Material UI
             </Typography>
             <img
               id="rotating-logo"
               className="scroll-rotate"
-              style={{
-                maxWidth: "80vw",
-                maxHeight: "20vh",
-                filter: `invert(1) sepia(1) saturate(5) hue-rotate(${calculateHueRotate(style.palette.primary.main)}deg)`,
-              }}
               src={logoImg}
-              alt="logo picture"
+              alt="logo"
+              style={{
+                width: 48,
+                height: 48,
+                filter: `invert(1) sepia(1) saturate(5) hue-rotate(${calculateHueRotate(theme.palette.primary.main)}deg)`,
+              }}
             />
-            <Typography className={"animate delay-6"} variant="body1" paragraph>
-              My thirst for knowledge led me to UCSC for a computer science
-              undergrad, where I expanded my repertoire to include a myriad of
-              languages and tools, from C and Java to Python. Alongside CLI Unix
-              commands and Git, I dabbled in assembly language and advanced
-              Java, enriching my understanding of software development.
-            </Typography>
-            <Typography className={"animate delay-7"} variant="body1" paragraph>
-              My professional journey continued at HoneyGrid, where I had the
-              privilege of working alongside a talented team led by James
-              Delorey, a seasoned software engineer from Adobe. Here, I immersed
-              myself in the latest frontend technologies, crafting dynamic
-              applications.
-            </Typography>
-            <Typography className={"animate delay-8"} variant="body1">
-              Feel free to reach out to me if you have any questions or would
-              like to discuss a potential collaboration.
-            </Typography>
-          </Paper>
-        </Grid>
+          </Box>
+        </Box>
+
+        {/* Parallax banner */}
+        <Box className="parallax animate delay-2" sx={{ mb: 5 }} />
+
+        {/* Bio */}
+        <Paper className="animate delay-3" elevation={2} sx={{ p: { xs: 3, md: 5 }, textAlign: "left" }}>
+          <Typography variant="body1" paragraph>
+            Passionate engineer from the beautiful land of Costa Rica. My journey into programming started at
+            the British School of Costa Rica — studying Computer Science alongside English and Physics — where
+            I fell in love with the art of coding. I wrote my first lines of Java at 11 years old.
+          </Typography>
+          <Typography variant="body1" paragraph>
+            My professional path began with internships that broadened my perspective. At KPMG Costa Rica,
+            under the mentorship of Luis Rivera (IT Governance Director), I built VBA macros that automated
+            internal processes and sparked a lasting interest in discrete mathematics.
+          </Typography>
+          <Typography variant="body1" paragraph>
+            I then pursued a B.S. in Computer Science at UC Santa Cruz, expanding my toolkit to include
+            Python, C, assembly language, CLI Unix workflows, and the full breadth of software engineering
+            fundamentals.
+          </Typography>
+          <Typography variant="body1" paragraph>
+            At HoneyGrid I joined a talented team led by a senior engineer from Adobe, building cutting-edge
+            web applications with React, TypeScript, and Material UI — from complex component engineering to
+            GPT-3.5 API integrations. More recently I've been building AI-powered products with agentic
+            systems, including babapp.io and a financial advisory platform.
+          </Typography>
+          <Typography variant="body1">
+            Feel free to reach out if you'd like to discuss a potential collaboration.
+          </Typography>
+        </Paper>
+
       </Grid>
-    </>
+    </Grid>
   );
 };
+
 export default LandingPage;
