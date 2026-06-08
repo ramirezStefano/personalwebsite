@@ -1,91 +1,143 @@
 import { FC } from "react";
-import { Box, Divider, Grid, Paper, Typography } from "@mui/material";
+import { Box, Grid, Paper, Typography, useTheme } from "@mui/material";
 import "../../../App.css";
-import { ChevronRight } from "@mui/icons-material";
 
-interface EducationProps {}
+interface EducationEntry {
+  institution: string;
+  credential: string;
+  type: string;
+  description: string;
+}
 
-const Education: FC<EducationProps> = () => {
+const entries: EducationEntry[] = [
+  {
+    institution: "British School of Costa Rica",
+    credential: "International Baccalaureate Diploma",
+    type: "Pre-University",
+    description:
+      "Higher Level courses in Computer Science, English Language and Literature, and Physics. Developed a strong foundation in analytical thinking and scientific method.",
+  },
+  {
+    institution: "University of California, Santa Cruz",
+    credential: "B.S. Computer Science",
+    type: "Undergraduate",
+    description:
+      "Pursued a Bachelor of Science in Computer Science at UCSC. Coursework spanned algorithms, data structures, discrete mathematics, systems programming, and software engineering.",
+  },
+  {
+    institution: "GitHub Workshops — UCSC",
+    credential: "Collaborative Development Workshop",
+    type: "Extracurricular",
+    description:
+      "Multi-day workshop delivered by a UC Berkeley professor covering GitHub workflows, branching strategies, pull request etiquette, and collaborative open-source best practices.",
+  },
+  {
+    institution: "LinkedIn Learning",
+    credential: "Career Skills in Software Development",
+    type: "Certification",
+    description:
+      "Completed LinkedIn's certified curriculum on career skills for software engineers, covering professional communication, agile methodologies, and engineering team dynamics.",
+  },
+];
+
+const Education: FC = () => {
+  const theme = useTheme();
+
   return (
     <Grid
       container
       justifyContent="center"
-      sx={{
-        gridAutoFlow: "row",
-        padding: 2,
-        paddingBottom: 10,
-        minHeight: "100vh",
-      }}
+      sx={{ padding: 2, paddingBottom: 15, minHeight: "100vh" }}
     >
-      <Grid item xs={12} sm={8} sx={{ paddingY: 15 }}>
-        <Paper className={"animate delay-1"} sx={{ padding: 2, margin: 2 }}>
-          <Typography variant="h4" gutterBottom>
-            Education
-          </Typography>
-          <Box className="parallax-education" />
+      <Grid item xs={12} sm={10} md={8} sx={{ paddingY: 15 }}>
+        <Typography className="animate delay-1" variant="h4" gutterBottom sx={{ mb: 3 }}>
+          Education
+        </Typography>
+        <Box className="parallax-education" sx={{ mb: 4 }} />
 
-          <Grid
-            display={"grid"}
-            container
-            gridAutoFlow={"column"}
-            justifyContent={"center"}
-            alignItems={"center"}
-            className={"animate delay-2"}
-          >
-            <ChevronRight className={"animate delay-3"} />
-            <Typography className={"animate delay-4"} variant="body1" paragraph>
-              British School of Costa Rica International Baccalaureate Diploma
-              with Higher Levels classes in Computer Science, English Language
-              and Literature, and Physics.
-            </Typography>
-          </Grid>
-          <Divider className={"animate delay-5"} />
-          <Grid
-            display={"grid"}
-            container
-            gridAutoFlow={"column"}
-            justifyContent={"center"}
-            alignItems={"center"}
-            className="animate delay-6"
-          >
-            <ChevronRight className={"animate delay-7"} />
-            <Typography className={"animate delay-8"} paragraph marginTop={2}>
-              Higher education at University of California, Santa Cruz (UCSC)
-              Pursued a degree in Computer Science B.S.
-            </Typography>
-          </Grid>
-          <Divider className={"animate delay-9"} />
+        <Box>
+          {entries.map((entry, i) => (
+            <Box key={entry.institution} className={`animate delay-${i + 2}`} sx={{ display: "flex", mb: 2 }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  mr: 2,
+                  flexShrink: 0,
+                }}
+              >
+                <Box
+                  sx={{
+                    width: 14,
+                    height: 14,
+                    borderRadius: "50%",
+                    backgroundColor: theme.palette.primary.main,
+                    mt: "22px",
+                    flexShrink: 0,
+                  }}
+                />
+                {i < entries.length - 1 && (
+                  <Box
+                    sx={{
+                      width: 2,
+                      flex: 1,
+                      backgroundColor: theme.palette.primary.main,
+                      opacity: 0.25,
+                      mt: 1,
+                      mb: -2,
+                    }}
+                  />
+                )}
+              </Box>
 
-          <Grid
-            display={"grid"}
-            container
-            gridAutoFlow={"column"}
-            justifyContent={"center"}
-            alignItems={"center"}
-            className="animate delay-10"
-          >
-            <ChevronRight className={"animate delay-11"} />
-            <Typography paragraph marginTop={2} className={"animate delay-12"}>
-              Github Workshops at (UCSC) Multi day workshop give by UC Berkley
-              professor on the use of GitHub and best practices.
-            </Typography>
-          </Grid>
-          <Divider className={"animate delay-13"} />
-          <Grid
-            display={"grid"}
-            container
-            gridAutoFlow={"column"}
-            justifyContent={"center"}
-            alignItems={"center"}
-            alignContent={"center"}
-            className="animate delay-14"
-          >
-            <ChevronRight className={"animate delay-15"} />
-            <Typography marginTop={2} className={"animate delay-16"}>
-              LinkedIn Certified in Career Skills in Software Development.
-            </Typography>
-          </Grid>
-        </Paper>
+              <Paper
+                elevation={2}
+                sx={{
+                  flex: 1,
+                  p: 3,
+                  borderLeft: `3px solid ${theme.palette.primary.main}`,
+                  transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                  "&:hover": {
+                    transform: "translateY(-2px)",
+                    boxShadow: theme.shadows[6],
+                  },
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    flexWrap: "wrap",
+                    gap: 1,
+                    mb: 0.5,
+                  }}
+                >
+                  <Typography variant="h5">{entry.institution}</Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{ color: theme.palette.text.secondary, alignSelf: "center" }}
+                  >
+                    {entry.type}
+                  </Typography>
+                </Box>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: theme.palette.primary.main,
+                    fontWeight: 700,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.5px",
+                    mb: 1.5,
+                  }}
+                >
+                  {entry.credential}
+                </Typography>
+                <Typography variant="body1">{entry.description}</Typography>
+              </Paper>
+            </Box>
+          ))}
+        </Box>
       </Grid>
     </Grid>
   );

@@ -1,12 +1,23 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link, useNavigate } from "react-router-dom";
-import { Grid, Paper, useTheme } from "@mui/material";
-import React from "react";
+import {
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Paper,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import DarkModeSwitch from "../DarkModeSwitch/DarkModeSwitch";
 import ThemeColorShuffle from "../ThemeColorShuffle/ThemeColorShuffle";
 import logo from "../../assets/ramirezStefanoLogo.svg";
@@ -18,25 +29,12 @@ const pages = ["Education", "Experience", "Skills", "Portfolio"];
 const Header: FC = () => {
   const navigate = useNavigate();
   const style = useTheme();
+  const isMobile = useMediaQuery(style.breakpoints.down("md"));
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
-  const handleTopNavButtons = (event: React.MouseEvent<HTMLElement>) => {
-    const buttonText: string = event.currentTarget.innerText.toLowerCase();
-    switch (buttonText) {
-      case "education":
-        navigate("/education/");
-        break;
-      case "experience":
-        navigate("/experience/");
-        break;
-      case "skills":
-        navigate("/skills/");
-        break;
-      case "portfolio":
-        navigate("/portfolio/");
-        break;
-      default:
-        break;
-    }
+  const handleNavClick = (path: string) => {
+    navigate(path);
+    setDrawerOpen(false);
   };
 
   return (
@@ -48,66 +46,91 @@ const Header: FC = () => {
         boxShadow: "0 4px 6px rgba(0, 0, 0, 0.5)",
       }}
     >
-      <Grid
-        display="grid"
-        gridAutoColumns={"column"}
-        gridTemplateColumns={"1fr, 1fr, 1fr"}
-        justifyContent={"space-around"}
-      >
-        <Toolbar disableGutters>
+      <Toolbar disableGutters sx={{ px: 1, justifyContent: "space-between" }}>
+        <Box sx={{ display: "flex", alignItems: "center" }}>
           <img
-            className="animateRotation rotate"
+            className="animateRotation"
             aria-label="logo"
             src={logo}
             style={{
               display: "block",
               margin: 10,
-              width: window.innerWidth <= 768 ? "40px" : "60px",
+              width: isMobile ? "40px" : "60px",
               filter: `invert(1) sepia(1) saturate(5) hue-rotate(${calculateHueRotate(style.palette.primary.main)}deg)`,
             }}
           />
           <Typography
-            variant={window.innerWidth <= 768 ? "h6" : "h5"}
+            variant={isMobile ? "h6" : "h5"}
             component="a"
             sx={{
-              mr: 2,
-              display: "grid",
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
               textDecoration: "none",
             }}
           >
-            <Link
-              style={{
-                color: style.palette.text.primary,
-              }}
-              to={`/`}
-            >
+            <Link style={{ color: style.palette.text.primary }} to="/">
               RAMIREZ STEFANO
             </Link>
           </Typography>
-          <Box
-            sx={{ display: { xs: "none", md: "grid" }, gridAutoFlow: "column" }}
-          >
+        </Box>
+
+        <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+          <Box sx={{ display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleTopNavButtons}
-                onMouseDown={handleTopNavButtons}
-                sx={{ my: 2, display: "block", marginX: 1 }}
+                onClick={() => handleNavClick(`/${page.toLowerCase()}/`)}
+                sx={{ my: 2, mx: 1 }}
                 variant="contained"
               >
                 {page}
               </Button>
             ))}
           </Box>
-          <Paper sx={{ display: "grid", gridAutoFlow: "column", marginX: 2 }}>
+
+          <Paper sx={{ display: "flex" }}>
             <DarkModeSwitch />
             <ThemeColorShuffle />
           </Paper>
-        </Toolbar>
-      </Grid>
+
+          <IconButton
+            color="inherit"
+            aria-label="open navigation menu"
+            onClick={() => setDrawerOpen(true)}
+            sx={{ display: { xs: "flex", md: "none" } }}
+          >
+            <MenuIcon />
+          </IconButton>
+        </Box>
+      </Toolbar>
+
+      <Drawer
+        anchor="right"
+        open={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+        PaperProps={{ sx: { width: 220 } }}
+      >
+        <Box sx={{ display: "flex", justifyContent: "flex-end", p: 1 }}>
+          <IconButton onClick={() => setDrawerOpen(false)} aria-label="close menu">
+            <CloseIcon />
+          </IconButton>
+        </Box>
+        <List>
+          <ListItem disablePadding>
+            <ListItemButton onClick={() => handleNavClick("/")}>
+              <ListItemText primary="Home" />
+            </ListItemButton>
+          </ListItem>
+          {pages.map((page) => (
+            <ListItem key={page} disablePadding>
+              <ListItemButton onClick={() => handleNavClick(`/${page.toLowerCase()}/`)}>
+                <ListItemText primary={page} />
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
+      </Drawer>
     </AppBar>
   );
 };

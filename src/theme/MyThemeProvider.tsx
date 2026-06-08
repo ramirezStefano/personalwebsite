@@ -45,21 +45,21 @@ export default function MyThemeProvider(props: MyThemeProviderProps) {
         ...(ThemeColors[theme][mode] as ThemeOptions),
         typography: {
           h3: {
-            color: ThemeColors[theme].dark.palette.primary?.main,
+            color: ThemeColors[theme][mode].palette.primary?.main,
             fontSize: "2rem",
             fontWeight: "bold",
             textTransform: "uppercase",
             letterSpacing: "1px",
           },
           h4: {
-            color: ThemeColors[theme].dark.palette.primary?.main,
+            color: ThemeColors[theme][mode].palette.primary?.main,
             fontSize: "2rem",
             fontWeight: "bold",
             textTransform: "uppercase",
             letterSpacing: "1px",
           },
           h5: {
-            color: ThemeColors[theme].dark.palette.secondary?.main,
+            color: ThemeColors[theme][mode].palette.secondary?.main,
             fontSize: "1rem",
             fontWeight: "bold",
             textTransform: "uppercase",
