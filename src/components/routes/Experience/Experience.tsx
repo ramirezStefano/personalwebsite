@@ -74,7 +74,7 @@ const Experience: FC = () => {
         <Typography className="animate delay-1" variant="h4" gutterBottom sx={{ mb: 3 }}>
           Experience
         </Typography>
-        <Box className="parallax-experience" sx={{ mb: 4 }} />
+        <Box className="animate delay-2 parallax-experience" sx={{ mb: 4 }} />
 
         <Box>
           {experiences.map((exp, i) => (

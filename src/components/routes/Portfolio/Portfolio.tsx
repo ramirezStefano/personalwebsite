@@ -199,7 +199,7 @@ const Portfolio: FC = () => {
         <Typography className="animate delay-1" variant="h4" gutterBottom sx={{ mb: 3 }}>
           Portfolio
         </Typography>
-        <Box className="parallax-portfolio" sx={{ mb: 4 }} />
+        <Box className="animate delay-2 parallax-portfolio" sx={{ mb: 4 }} />
 
         <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
           {projects.map((project, i) => (

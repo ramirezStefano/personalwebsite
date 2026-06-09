@@ -43,7 +43,7 @@ const Skills: FC = () => {
         <Typography className="animate delay-1" variant="h4" gutterBottom sx={{ mb: 3 }}>
           Skills
         </Typography>
-        <Box className="parallax-skills" sx={{ mb: 4 }} />
+        <Box className="animate delay-2 parallax-skills" sx={{ mb: 4 }} />
 
         <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
           {skillGroups.map((group, i) => (
