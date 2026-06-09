@@ -53,7 +53,7 @@ const Education: FC = () => {
         <Typography className="animate delay-1" variant="h4" gutterBottom sx={{ mb: 3 }}>
           Education
         </Typography>
-        <Box className="parallax-education" sx={{ mb: 4 }} />
+        <Box className="animate delay-2 parallax-education" sx={{ mb: 4 }} />
 
         <Box>
           {entries.map((entry, i) => (

@@ -45,14 +45,14 @@ export default function MyThemeProvider(props: MyThemeProviderProps) {
         ...(ThemeColors[theme][mode] as ThemeOptions),
         typography: {
           h3: {
-            color: ThemeColors[theme][mode].palette.primary?.main,
+            color: mode === "dark" ? "rgba(255,255,255,0.87)" : "rgba(0,0,0,0.87)",
             fontSize: "2rem",
             fontWeight: "bold",
             textTransform: "uppercase",
             letterSpacing: "1px",
           },
           h4: {
-            color: ThemeColors[theme][mode].palette.primary?.main,
+            color: mode === "dark" ? "rgba(255,255,255,0.87)" : "rgba(0,0,0,0.87)",
             fontSize: "2rem",
             fontWeight: "bold",
             textTransform: "uppercase",
