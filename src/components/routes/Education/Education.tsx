@@ -1,6 +1,8 @@
 import { FC } from "react";
 import { Box, Grid, Paper, Typography, useTheme } from "@mui/material";
 import "../../../App.css";
+import PageHeader from "../../PageHeader/PageHeader";
+import { glassCard } from "../../../utils/styles/glassCard";
 
 interface EducationEntry {
   institution: string;
@@ -50,10 +52,7 @@ const Education: FC = () => {
       sx={{ padding: 2, paddingBottom: 15, minHeight: "100vh" }}
     >
       <Grid item xs={12} sm={10} md={8} sx={{ paddingY: 15 }}>
-        <Typography className="animate delay-1" variant="h4" gutterBottom sx={{ mb: 3 }}>
-          Education
-        </Typography>
-        <Box className="animate delay-2 parallax-education" sx={{ mb: 4 }} />
+        <PageHeader eyebrow="Background" title="Education" />
 
         <Box>
           {entries.map((entry, i) => (
@@ -92,10 +91,11 @@ const Education: FC = () => {
               </Box>
 
               <Paper
-                elevation={2}
+                elevation={0}
                 sx={{
                   flex: 1,
                   p: 3,
+                  ...glassCard(theme),
                   borderLeft: `3px solid ${theme.palette.primary.main}`,
                   transition: "transform 0.2s ease, box-shadow 0.2s ease",
                   "&:hover": {

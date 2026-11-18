@@ -1,79 +1,39 @@
 // src/theme/presets/default.ts
 
-import { createTheme } from "@mui/material/styles";
 import { AppTheme } from "..";
 
-const { palette } = createTheme();
-const defaultLight = createTheme({
-  palette: {
-    mode: "light",
-  },
-});
-const defaultDark = createTheme({
-  palette: {
-    mode: "dark",
-  },
-});
 export const theme: AppTheme = {
   dark: {
     palette: {
-      ...defaultDark.palette,
-      upvote: palette.augmentColor({
-        color: {
-          main: "#66bb6a",
-          contrastText: "rgba(0,0,0,0.87)",
-        },
-      }),
-      downvote: palette.augmentColor({
-        color: {
-          main: "#f44336",
-          contrastText: "#fff",
-        },
-      }),
-      containerPrimary: palette.augmentColor({
-        color: {
-          main: "#121212",
-          contrastText: "white",
-        },
-      }),
-      containerSecondary: palette.augmentColor({
-        color: {
-          main: "#121212",
-          contrastText: "white",
-        },
-      }),
+      mode: "dark",
+      primary: {
+        main: "#5B8DEF",
+        contrastText: "#06101F",
+      },
+      secondary: {
+        main: "#9BA4B5",
+        contrastText: "#06101F",
+      },
+      background: {
+        default: "#0B0D10",
+        paper: "#131619",
+      },
     },
   },
   light: {
     palette: {
-      ...defaultLight.palette,
-      upvote: palette.augmentColor({
-        color: {
-          main: "#2e7d32",
-          contrastText: "#32009a",
-        },
-      }),
-      downvote: palette.augmentColor({
-        color: {
-          main: "#d32f2f",
-          contrastText: "#fff",
-        },
-      }),
-      containerPrimary: palette.augmentColor({
-        color: {
-          main: "#fff",
-          contrastText: "#black",
-        },
-      }),
-      containerSecondary: palette.augmentColor({
-        color: {
-          main: "#fff",
-          contrastText: "#black",
-        },
-      }),
+      mode: "light",
+      primary: {
+        main: "#3657D6",
+        contrastText: "#FFFFFF",
+      },
+      secondary: {
+        main: "#5B6472",
+        contrastText: "#FFFFFF",
+      },
       background: {
-        default: "#d1d1d1ff",
-        paper: "#e9e9e9ff",
+        default: "#F5F6F8",
+        paper: "#FFFFFF",
       },
     },
   },

@@ -13,14 +13,12 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
-  Paper,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import DarkModeSwitch from "../DarkModeSwitch/DarkModeSwitch";
-import ThemeColorShuffle from "../ThemeColorShuffle/ThemeColorShuffle";
 import logo from "../../assets/ramirezStefanoLogo.svg";
 import "../../App.css";
 import { calculateHueRotate } from "../../utils/strings/strings";
@@ -131,19 +129,8 @@ const Header: FC = () => {
             ))}
           </Box>
 
-          {/* Theme controls */}
-          <Paper
-            elevation={0}
-            sx={{
-              display: "flex",
-              borderRadius: "20px",
-              background: "rgba(255,255,255,0.08)",
-              border: "1px solid rgba(255,255,255,0.1)",
-            }}
-          >
-            <DarkModeSwitch />
-            <ThemeColorShuffle />
-          </Paper>
+          {/* Theme control */}
+          <DarkModeSwitch />
 
           {/* Mobile hamburger */}
           <IconButton

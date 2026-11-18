@@ -1,6 +1,8 @@
 import { FC } from "react";
 import { Box, Button, Grid, Paper, Typography, useTheme } from "@mui/material";
 import "../../../App.css";
+import PageHeader from "../../PageHeader/PageHeader";
+import { glassCard } from "../../../utils/styles/glassCard";
 import ts from "../../../assets/icons/typescript.svg";
 import html from "../../../assets/icons/html5.svg";
 import mui from "../../../assets/icons/mui.svg";
@@ -59,18 +61,16 @@ const projects: Project[] = [
     name: "Financial Advisors",
     type: "2026 – Present",
     description:
-      "AI-powered platform for financial advisory services, built on agentic systems that reason over client data and market context to surface personalized recommendations. Designed to augment the workflow of financial advisors with intelligent automation.",
+      "Production SaaS platform for financial advisors, built on Astro and React. Sole engineer owning the full stack — from Cloudflare Workers/D1 infrastructure and Stripe billing to an AI Visibility Probe system that tests whether advisor profiles are surfaced and cited by Claude, GPT, and Gemini through a multi-provider Cloudflare AI Gateway layer.",
     icons: [
       { src: ts, label: "TypeScript" },
       { src: react, label: "React" },
-      { src: mui, label: "MUI" },
-      { src: vite, label: "Vite" },
-      { src: axios, label: "Axios" },
-      { src: googleCloud, label: "Google Cloud" },
+      { src: oauth, label: "OAuth" },
+      { src: githubActions, label: "GitHub Actions" },
       { src: githubCopilot, label: "GitHub Copilot" },
       { src: github, label: "GitHub" },
     ],
-    links: [],
+    links: [{ label: "Visit Financial Advisors", href: "https://financialadvisors.com/" }],
   },
   {
     name: "babapp.io",
@@ -196,19 +196,17 @@ const Portfolio: FC = () => {
       sx={{ padding: 2, paddingBottom: 15, minHeight: "100vh" }}
     >
       <Grid item xs={12} sm={10} md={8} sx={{ paddingTop: 15 }}>
-        <Typography className="animate delay-1" variant="h4" gutterBottom sx={{ mb: 3 }}>
-          Portfolio
-        </Typography>
-        <Box className="animate delay-2 parallax-portfolio" sx={{ mb: 4 }} />
+        <PageHeader eyebrow="Selected Work" title="Portfolio" />
 
         <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
           {projects.map((project, i) => (
             <Paper
               key={project.name}
               className={`animate delay-${i + 2}`}
-              elevation={2}
+              elevation={0}
               sx={{
                 p: 3,
+                ...glassCard(theme),
                 borderLeft: `3px solid ${theme.palette.primary.main}`,
                 transition: "transform 0.2s ease, box-shadow 0.2s ease",
                 "&:hover": {
