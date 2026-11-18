@@ -1,5 +1,5 @@
 import { FC, SyntheticEvent } from "react";
-import { Box, Button, IconButton, useTheme } from "@mui/material";
+import { Box, Button, IconButton } from "@mui/material";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import SchoolIcon from "@mui/icons-material/School";
@@ -12,11 +12,11 @@ import DownloadIcon from "@mui/icons-material/Download";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import { useLocation, useNavigate } from "react-router-dom";
 import resume from "../../assets/pdf/CV STEFANO RAMIREZ.pdf";
+import { NAV_ACCENT } from "../../theme/navAccent";
 
 const bottomNavPages = ["education", "experience", "portfolio", "skills"];
 
 const Footer: FC = () => {
-  const style = useTheme();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -37,9 +37,9 @@ const Footer: FC = () => {
     border: "1px solid rgba(255,255,255,0.15)",
     transition: "all 0.2s ease",
     "&:hover": {
-      backgroundColor: `${style.palette.primary.main}22`,
-      color: style.palette.primary.main,
-      border: `1px solid ${style.palette.primary.main}66`,
+      backgroundColor: `${NAV_ACCENT}22`,
+      color: NAV_ACCENT,
+      border: `1px solid ${NAV_ACCENT}66`,
     },
   };
 
@@ -50,9 +50,9 @@ const Footer: FC = () => {
     border: "1px solid rgba(255,255,255,0.12)",
     backgroundColor: "rgba(255,255,255,0.06)",
     "&:hover": {
-      backgroundColor: `${style.palette.primary.main}22`,
-      color: style.palette.primary.main,
-      border: `1px solid ${style.palette.primary.main}66`,
+      backgroundColor: `${NAV_ACCENT}22`,
+      color: NAV_ACCENT,
+      border: `1px solid ${NAV_ACCENT}66`,
     },
   };
 
@@ -65,7 +65,7 @@ const Footer: FC = () => {
         right: "12px",
         zIndex: 1100,
         borderRadius: { xs: "24px", md: "50px" },
-        background: "rgba(10, 10, 10, 0.65)",
+        background: "rgba(8, 9, 11, 0.92)",
         backdropFilter: "blur(20px)",
         WebkitBackdropFilter: "blur(20px)",
         boxShadow: "0 -4px 32px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(255,255,255,0.08)",
@@ -83,23 +83,32 @@ const Footer: FC = () => {
         }}
       >
         <Button
+          component="a"
+          href="https://www.linkedin.com/in/stefano-ramirez-novello/"
+          target="_blank"
+          rel="noopener noreferrer"
           startIcon={<LinkedInIcon fontSize="small" />}
           sx={pillButtonSx}
-          onClick={() => window.open("https://www.linkedin.com/in/stefano-ramirez-novello/", "_blank")}
         >
           LinkedIn
         </Button>
         <Button
+          component="a"
+          href={resume}
+          target="_blank"
+          rel="noopener noreferrer"
           startIcon={<DownloadIcon fontSize="small" />}
           sx={pillButtonSx}
-          onClick={() => window.open(resume, "_blank")}
         >
           Resume
         </Button>
         <Button
+          component="a"
+          href="https://github.com/ramirezStefano/"
+          target="_blank"
+          rel="noopener noreferrer"
           startIcon={<GitHubIcon fontSize="small" />}
           sx={pillButtonSx}
-          onClick={() => window.open("https://github.com/ramirezStefano/", "_blank")}
         >
           GitHub
         </Button>
@@ -117,23 +126,32 @@ const Footer: FC = () => {
           }}
         >
           <IconButton
+            component="a"
+            href="https://www.linkedin.com/in/stefano-ramirez-novello/"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="LinkedIn"
             sx={glassIconButtonSx}
-            onClick={() => window.open("https://www.linkedin.com/in/stefano-ramirez-novello/", "_blank")}
           >
             <LinkedInIcon fontSize="small" />
           </IconButton>
           <IconButton
+            component="a"
+            href={resume}
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Download resume"
             sx={glassIconButtonSx}
-            onClick={() => window.open(resume, "_blank")}
           >
             <PictureAsPdfIcon fontSize="small" />
           </IconButton>
           <IconButton
+            component="a"
+            href="https://github.com/ramirezStefano/"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="GitHub"
             sx={glassIconButtonSx}
-            onClick={() => window.open("https://github.com/ramirezStefano/", "_blank")}
           >
             <GitHubIcon fontSize="small" />
           </IconButton>
@@ -150,10 +168,16 @@ const Footer: FC = () => {
               minWidth: 0,
             },
             "& .Mui-selected": {
-              color: style.palette.primary.main,
+              color: NAV_ACCENT,
+            },
+            "& .Mui-selected .MuiSvgIcon-root": {
+              fontSize: "1.35rem",
             },
             "& .MuiBottomNavigationAction-label": {
               fontSize: "0.65rem",
+            },
+            "& .Mui-selected .MuiBottomNavigationAction-label": {
+              fontWeight: 700,
             },
           }}
         >

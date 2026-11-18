@@ -38,7 +38,7 @@ const ErrorPage: FC<ErrorPageProps> = () => {
         >
           404
         </Typography>
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="h5" component="h1" gutterBottom>
           Page not found
         </Typography>
         <Typography variant="body1" sx={{ color: "text.secondary", mb: 1 }}>

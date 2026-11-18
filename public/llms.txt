@@ -1,0 +1,16 @@
+# Stefano Ramirez
+
+> Software engineer based in Costa Rica working across the full software development lifecycle, with a current focus on AI-powered products and agentic systems that integrate Claude, GPT, and Gemini into production workflows. Stack: React, TypeScript, Astro, Cloudflare.
+
+## Pages
+
+- [Home](https://ramirezstefano.com/): Bio, current focus, and background — from first lines of Java at age 11 to building agentic AI systems in production today.
+- [Experience](https://ramirezstefano.com/experience): Work history, including Financial Advisors (sole engineer; built an AI Visibility Probe system testing advisor visibility across Claude, GPT, and Gemini via a Cloudflare AI Gateway layer), babapp.io, and HoneyGrid.
+- [Portfolio](https://ramirezstefano.com/portfolio): Selected projects with tech stacks and links, including the Financial Advisors platform, babapp.io, HoneyGrid, and open-source work.
+- [Skills](https://ramirezstefano.com/skills): Languages, frontend, backend/APIs, tooling, and concepts — including Cloudflare Workers/D1, Astro, Stripe, and multi-provider AI routing.
+- [Education](https://ramirezstefano.com/education): B.S. Computer Science (UC Santa Cruz) and an International Baccalaureate Diploma (British School of Costa Rica).
+
+## Contact
+
+- LinkedIn: https://www.linkedin.com/in/stefano-ramirez-novello/
+- GitHub: https://github.com/ramirezStefano/
