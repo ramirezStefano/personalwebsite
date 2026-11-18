@@ -1,6 +1,8 @@
 import { FC } from "react";
 import { Box, Chip, Grid, Paper, Typography, useTheme } from "@mui/material";
 import "../../../App.css";
+import PageHeader from "../../PageHeader/PageHeader";
+import { glassCard } from "../../../utils/styles/glassCard";
 
 interface ExperienceEntry {
   company: string;
@@ -16,8 +18,19 @@ const experiences: ExperienceEntry[] = [
     role: "Software Engineer",
     period: "2026 – Present",
     description:
-      "Building an AI-powered financial advisory platform driven by agentic systems. The system reasons over client portfolios and market context to surface personalized, explainable recommendations — augmenting the workflow of financial advisors with intelligent automation.",
-    tech: ["React", "TypeScript", "Material UI", "Vite", "Axios", "Google Cloud", "Agentic AI"],
+      "Sole engineer owning the full technical stack behind a production SaaS platform for financial advisors, partnering directly with the CTO and CEO on roadmap and delivery. Designed and built an AI Visibility Probe system that tests whether advisor profiles get surfaced and cited by Claude, GPT, and Gemini, backed by a Cloudflare AI Gateway layer that routes and monitors usage across all three providers. Own the full lifecycle end to end — schema design and database migrations, staging-to-production CI/CD, Stripe billing, OAuth-based authentication, and incident response.",
+    tech: [
+      "Astro",
+      "React",
+      "TypeScript",
+      "Cloudflare Workers",
+      "Cloudflare D1",
+      "Stripe",
+      "Anthropic SDK",
+      "OpenAI API",
+      "Gemini API",
+      "GitHub Actions",
+    ],
   },
   {
     company: "babapp.io",
@@ -71,10 +84,7 @@ const Experience: FC = () => {
       sx={{ gridAutoFlow: "row", padding: 2, paddingBottom: 15, minHeight: "100vh" }}
     >
       <Grid item xs={12} sm={10} md={8} sx={{ paddingY: 15 }}>
-        <Typography className="animate delay-1" variant="h4" gutterBottom sx={{ mb: 3 }}>
-          Experience
-        </Typography>
-        <Box className="animate delay-2 parallax-experience" sx={{ mb: 4 }} />
+        <PageHeader eyebrow="Career" title="Experience" />
 
         <Box>
           {experiences.map((exp, i) => (
@@ -119,10 +129,11 @@ const Experience: FC = () => {
 
               {/* Card */}
               <Paper
-                elevation={2}
+                elevation={0}
                 sx={{
                   flex: 1,
                   p: 3,
+                  ...glassCard(theme),
                   borderLeft: `3px solid ${theme.palette.primary.main}`,
                   transition: "transform 0.2s ease, box-shadow 0.2s ease",
                   "&:hover": {

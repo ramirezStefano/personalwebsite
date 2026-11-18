@@ -4,6 +4,7 @@ import logoImg from "../../assets/ramirezStefanoLogo.svg";
 import portrait from "../../assets/picture.jpeg";
 import "../../App.css";
 import { calculateHueRotate } from "../../utils/strings/strings";
+import { glassCard } from "../../utils/styles/glassCard";
 
 const LandingPage: FC = () => {
   const theme = useTheme();
@@ -90,11 +91,12 @@ const LandingPage: FC = () => {
           </Box>
         </Box>
 
-        {/* Parallax banner */}
-        <Box className="parallax animate delay-2" sx={{ mb: 5 }} />
-
         {/* Bio */}
-        <Paper className="animate delay-3" elevation={2} sx={{ p: { xs: 3, md: 5 }, textAlign: "left" }}>
+        <Paper
+          className="animate delay-2"
+          elevation={0}
+          sx={{ p: { xs: 3, md: 5 }, textAlign: "left", ...glassCard(theme) }}
+        >
           <Typography variant="body1" paragraph>
             Passionate engineer from the beautiful land of Costa Rica. My journey into programming started at
             the British School of Costa Rica — studying Computer Science alongside English and Physics — where

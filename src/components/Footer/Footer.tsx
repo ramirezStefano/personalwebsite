@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, SyntheticEvent } from "react";
 import { Box, Button, IconButton, useTheme } from "@mui/material";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
@@ -10,23 +10,22 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import DownloadIcon from "@mui/icons-material/Download";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import resume from "../../assets/pdf/CV STEFANO RAMIREZ.pdf";
+
+const bottomNavPages = ["education", "experience", "portfolio", "skills"];
 
 const Footer: FC = () => {
   const style = useTheme();
-  const [value, setValue] = React.useState<number>();
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-    switch (newValue) {
-      case 0: navigate("/education"); break;
-      case 1: navigate("/experience/"); break;
-      case 2: navigate("/portfolio/"); break;
-      case 3: navigate("/skills/"); break;
-    }
+  const activeIndex = bottomNavPages.findIndex((page) =>
+    location.pathname.toLowerCase().includes(page),
+  );
+
+  const handleChange = (_event: SyntheticEvent, newValue: number) => {
+    navigate(`/${bottomNavPages[newValue]}`);
   };
 
   const pillButtonSx = {
@@ -141,7 +140,7 @@ const Footer: FC = () => {
         </Box>
 
         <BottomNavigation
-          value={value}
+          value={activeIndex === -1 ? false : activeIndex}
           onChange={handleChange}
           sx={{
             background: "transparent",

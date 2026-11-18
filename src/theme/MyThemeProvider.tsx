@@ -4,11 +4,10 @@ import GlobalStyles from "@mui/material/GlobalStyles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { ThemeProvider, createTheme, ThemeOptions } from "@mui/material/styles";
 
-import { color as ThemeColors } from "./index";
+import { theme as appTheme } from "./index";
 
 export const ThemeContext = React.createContext({
   toggleColorMode: () => {},
-  shuffleColorTheme: () => {},
 });
 
 type MyThemeProviderProps = {
@@ -21,7 +20,6 @@ export default function MyThemeProvider(props: MyThemeProviderProps) {
   const [mode, setMode] = React.useState<"light" | "dark">(
     prefersDarkMode ? "dark" : "light",
   );
-  const [theme, setTheme] = React.useState<0 | 1 | 2 | 3>(0);
 
   useEffect(() => {
     setMode(prefersDarkMode ? "dark" : "light");
@@ -32,9 +30,6 @@ export default function MyThemeProvider(props: MyThemeProviderProps) {
       toggleColorMode: () => {
         setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
       },
-      shuffleColorTheme: () => {
-        setTheme((prevTheme) => ((prevTheme + 1) % 4) as 0 | 1 | 2 | 3);
-      },
     }),
     [],
   );
@@ -42,7 +37,7 @@ export default function MyThemeProvider(props: MyThemeProviderProps) {
   const _theme = React.useMemo(
     () =>
       createTheme({
-        ...(ThemeColors[theme][mode] as ThemeOptions),
+        ...(appTheme[mode] as ThemeOptions),
         typography: {
           h3: {
             color: mode === "dark" ? "rgba(255,255,255,0.87)" : "rgba(0,0,0,0.87)",
@@ -59,28 +54,25 @@ export default function MyThemeProvider(props: MyThemeProviderProps) {
             letterSpacing: "1px",
           },
           h5: {
-            color: ThemeColors[theme][mode].palette.secondary?.main,
+            color: appTheme[mode].palette.secondary?.main,
             fontSize: "1rem",
             fontWeight: "bold",
             textTransform: "uppercase",
             letterSpacing: "1px",
           },
           h6: {
-            // color: ThemeColors[theme].dark.palette.secondary?.dark,
             fontSize: "0.8rem",
             fontWeight: "bold",
-            // textTransform: "uppercase",
             letterSpacing: "1px",
           },
           body1: {
             fontSize: "1rem",
-            lineHeight: 2,
+            lineHeight: 1.7,
             marginBottom: "1em",
-            // color: ThemeColors[theme].dark.palette.secondary?.dark,
           },
         },
       }),
-    [mode, theme],
+    [mode],
   );
 
   return (
