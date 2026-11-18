@@ -56,10 +56,7 @@ const Skills: FC = () => {
                 borderLeft: `3px solid ${theme.palette.primary.main}`,
               }}
             >
-              <Typography
-                variant="h5"
-                sx={{ mb: 2 }}
-              >
+              <Typography variant="h5" component="h2" sx={{ mb: 2 }}>
                 {group.category}
               </Typography>
               <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>

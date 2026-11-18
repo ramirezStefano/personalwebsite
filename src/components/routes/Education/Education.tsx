@@ -113,7 +113,7 @@ const Education: FC = () => {
                     mb: 0.5,
                   }}
                 >
-                  <Typography variant="h5">{entry.institution}</Typography>
+                  <Typography variant="h5" component="h2">{entry.institution}</Typography>
                   <Typography
                     variant="body2"
                     sx={{ color: theme.palette.text.secondary, alignSelf: "center" }}

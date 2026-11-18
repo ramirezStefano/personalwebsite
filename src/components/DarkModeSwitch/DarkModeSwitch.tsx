@@ -4,6 +4,7 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import IconButton from "@mui/material/IconButton";
 import React from "react";
+import { NAV_ACCENT } from "../../theme/navAccent";
 
 const DarkModeSwitch = () => {
   const theme = useTheme();
@@ -20,9 +21,9 @@ const DarkModeSwitch = () => {
         backgroundColor: "rgba(255,255,255,0.08)",
         border: "1px solid rgba(255,255,255,0.1)",
         "&:hover": {
-          backgroundColor: `${theme.palette.primary.main}22`,
-          color: theme.palette.primary.main,
-          border: `1px solid ${theme.palette.primary.main}66`,
+          backgroundColor: `${NAV_ACCENT}22`,
+          color: NAV_ACCENT,
+          border: `1px solid ${NAV_ACCENT}66`,
         },
       }}
     >

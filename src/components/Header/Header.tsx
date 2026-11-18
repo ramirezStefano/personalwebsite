@@ -22,6 +22,7 @@ import DarkModeSwitch from "../DarkModeSwitch/DarkModeSwitch";
 import logo from "../../assets/ramirezStefanoLogo.svg";
 import "../../App.css";
 import { calculateHueRotate } from "../../utils/strings/strings";
+import { NAV_ACCENT } from "../../theme/navAccent";
 
 const pages = ["Education", "Experience", "Skills", "Portfolio"];
 
@@ -40,7 +41,7 @@ const Header: FC = () => {
   const isActive = (page: string) =>
     location.pathname.toLowerCase().includes(page.toLowerCase());
 
-  const logoFilter = `invert(1) sepia(1) saturate(5) hue-rotate(${calculateHueRotate(style.palette.primary.main)}deg)`;
+  const logoFilter = `invert(1) sepia(1) saturate(5) hue-rotate(${calculateHueRotate(NAV_ACCENT)}deg)`;
 
   return (
     <AppBar
@@ -52,7 +53,7 @@ const Header: FC = () => {
         right: "12px",
         width: "auto",
         borderRadius: "50px",
-        background: "rgba(10, 10, 10, 0.65)",
+        background: "rgba(8, 9, 11, 0.92)",
         backdropFilter: "blur(20px)",
         WebkitBackdropFilter: "blur(20px)",
         boxShadow: "0 8px 32px rgba(0,0,0,0.4), inset 0 0 0 1px rgba(255,255,255,0.08)",
@@ -66,7 +67,7 @@ const Header: FC = () => {
         <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
           <img
             className="animateRotation"
-            aria-label="logo"
+            alt=""
             src={logo}
             style={{
               display: "block",
@@ -109,18 +110,14 @@ const Header: FC = () => {
                   borderRadius: "20px",
                   fontSize: "0.8rem",
                   fontWeight: isActive(page) ? 700 : 400,
-                  color: isActive(page) ? style.palette.primary.main : "rgba(255,255,255,0.8)",
-                  backgroundColor: isActive(page)
-                    ? `${style.palette.primary.main}22`
-                    : "transparent",
-                  border: isActive(page)
-                    ? `1px solid ${style.palette.primary.main}66`
-                    : "1px solid transparent",
+                  color: isActive(page) ? NAV_ACCENT : "rgba(255,255,255,0.8)",
+                  backgroundColor: isActive(page) ? `${NAV_ACCENT}22` : "transparent",
+                  border: isActive(page) ? `1px solid ${NAV_ACCENT}66` : "1px solid transparent",
                   transition: "all 0.2s ease",
                   "&:hover": {
-                    backgroundColor: `${style.palette.primary.main}22`,
-                    color: style.palette.primary.main,
-                    border: `1px solid ${style.palette.primary.main}66`,
+                    backgroundColor: `${NAV_ACCENT}22`,
+                    color: NAV_ACCENT,
+                    border: `1px solid ${NAV_ACCENT}66`,
                   },
                 }}
               >
@@ -159,7 +156,7 @@ const Header: FC = () => {
         PaperProps={{
           sx: {
             width: 240,
-            background: "rgba(12, 12, 12, 0.95)",
+            background: "rgba(8, 9, 11, 0.96)",
             backdropFilter: "blur(20px)",
             borderLeft: "1px solid rgba(255,255,255,0.08)",
           },
@@ -175,7 +172,7 @@ const Header: FC = () => {
           }}
         >
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-            <img src={logo} width={26} style={{ filter: logoFilter }} alt="logo" />
+            <img src={logo} width={26} style={{ filter: logoFilter }} alt="" />
             <Typography
               sx={{
                 fontFamily: "monospace",
@@ -206,7 +203,7 @@ const Header: FC = () => {
               sx={{
                 mx: 1,
                 borderRadius: "12px",
-                "&:hover": { backgroundColor: `${style.palette.primary.main}22` },
+                "&:hover": { backgroundColor: `${NAV_ACCENT}22` },
               }}
             >
               <ListItemText
@@ -225,19 +222,15 @@ const Header: FC = () => {
                 sx={{
                   mx: 1,
                   borderRadius: "12px",
-                  backgroundColor: isActive(page)
-                    ? `${style.palette.primary.main}22`
-                    : "transparent",
-                  "&:hover": { backgroundColor: `${style.palette.primary.main}22` },
+                  backgroundColor: isActive(page) ? `${NAV_ACCENT}22` : "transparent",
+                  "&:hover": { backgroundColor: `${NAV_ACCENT}22` },
                 }}
               >
                 <ListItemText
                   primary={page}
                   primaryTypographyProps={{
                     sx: {
-                      color: isActive(page)
-                        ? style.palette.primary.main
-                        : "rgba(255,255,255,0.8)",
+                      color: isActive(page) ? NAV_ACCENT : "rgba(255,255,255,0.8)",
                       fontWeight: isActive(page) ? 700 : 400,
                       fontSize: "0.95rem",
                     },

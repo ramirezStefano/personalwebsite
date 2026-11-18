@@ -23,7 +23,7 @@ const PageHeader: FC<PageHeaderProps> = ({ eyebrow, title }) => {
       >
         {eyebrow}
       </Typography>
-      <Typography variant="h4" sx={{ mt: 0.5 }}>
+      <Typography variant="h4" component="h1" sx={{ mt: 0.5 }}>
         {title}
       </Typography>
     </Box>
