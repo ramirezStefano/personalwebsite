@@ -1,38 +1,33 @@
-import { Grid, useTheme } from "@mui/material";
+import { Box } from "@mui/material";
 import "./App.css";
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import { Outlet } from "react-router-dom";
-import ParticlesBg from "particles-bg";
+import { useDocumentMeta } from "./utils/seo/useDocumentMeta";
 
 function App() {
-  const style = useTheme();
+  useDocumentMeta();
 
   return (
-    <>
-      <Grid
+    <Box sx={{ position: "relative", minHeight: "100vh", bgcolor: "background.default" }}>
+      <Box
         sx={{
-          position: "relative",
-          background: `linear-gradient(to bottom, ${style.palette.primary.main}, ${style.palette.secondary.light})`,
+          position: "fixed",
+          inset: 0,
+          zIndex: 0,
+          pointerEvents: "none",
+          background: (theme) =>
+            `radial-gradient(60% 45% at 50% 0%, ${theme.palette.primary.main}${
+              theme.palette.mode === "dark" ? "1f" : "14"
+            }, transparent 70%)`,
         }}
-        zIndex={0}
-      >
-        <Header />
-
-        <Grid position={"fixed"} width={"100vw"} height={"100vh"} zIndex={-1}>
-          <ParticlesBg
-            type="cobweb"
-            num={50}
-            bg={false}
-            color={style.palette.secondary.main}
-          />
-        </Grid>
-        <Grid zIndex={2}>
-          <Outlet />
-        </Grid>
-        <Footer />
-      </Grid>
-    </>
+      />
+      <Header />
+      <Box sx={{ position: "relative", zIndex: 1 }}>
+        <Outlet />
+      </Box>
+      <Footer />
+    </Box>
   );
 }
 
