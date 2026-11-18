@@ -5,6 +5,14 @@ import portrait from "../../assets/picture.jpeg";
 import "../../App.css";
 import { calculateHueRotate } from "../../utils/strings/strings";
 import { glassCard } from "../../utils/styles/glassCard";
+import RotatingTagline from "../RotatingTagline/RotatingTagline";
+
+const TAGLINES = [
+  "Software Engineer",
+  "AI & Agentic Systems Builder",
+  "Full-Stack Problem Solver",
+  "Shipping Production Software, End to End",
+];
 
 const LandingPage: FC = () => {
   const theme = useTheme();
@@ -54,22 +62,10 @@ const LandingPage: FC = () => {
           </Box>
 
           <Box>
-            <Typography variant="h4" className="animate delay-1" gutterBottom>
+            <Typography variant="h4" component="h1" className="animate delay-1" gutterBottom>
               Stefano Ramirez
             </Typography>
-            <Typography
-              className="animate delay-2"
-              sx={{
-                color: theme.palette.primary.main,
-                fontSize: "1rem",
-                fontWeight: 600,
-                textTransform: "uppercase",
-                letterSpacing: "2px",
-                mb: 1,
-              }}
-            >
-              Web Development Engineer
-            </Typography>
+            <RotatingTagline phrases={TAGLINES} />
             <Typography
               className="animate delay-3"
               variant="body2"
@@ -81,7 +77,7 @@ const LandingPage: FC = () => {
               id="rotating-logo"
               className="scroll-rotate"
               src={logoImg}
-              alt="logo"
+              alt=""
               style={{
                 width: 48,
                 height: 48,
@@ -97,6 +93,13 @@ const LandingPage: FC = () => {
           elevation={0}
           sx={{ p: { xs: 3, md: 5 }, textAlign: "left", ...glassCard(theme) }}
         >
+          <Typography variant="body1" paragraph>
+            I work across the full software development lifecycle — architecture, implementation, deployment,
+            and the less glamorous parts like incident response and production migrations — rather than just
+            writing code and handing it off. My current focus is building AI-powered products with agentic
+            systems, integrating large language models like Claude, GPT, and Gemini into real production
+            workflows.
+          </Typography>
           <Typography variant="body1" paragraph>
             Passionate engineer from the beautiful land of Costa Rica. My journey into programming started at
             the British School of Costa Rica — studying Computer Science alongside English and Physics — where
@@ -115,8 +118,8 @@ const LandingPage: FC = () => {
           <Typography variant="body1" paragraph>
             At HoneyGrid I joined a talented team led by a senior engineer from Adobe, building cutting-edge
             web applications with React, TypeScript, and Material UI — from complex component engineering to
-            GPT-3.5 API integrations. More recently I've been building AI-powered products with agentic
-            systems, including babapp.io and a financial advisory platform.
+            GPT-3.5 API integrations. That work carried into my current roles at babapp.io and a financial
+            advisory platform, where agentic AI is now central to the product.
           </Typography>
           <Typography variant="body1">
             Feel free to reach out if you'd like to discuss a potential collaboration.

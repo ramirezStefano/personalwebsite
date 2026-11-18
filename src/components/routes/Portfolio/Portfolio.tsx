@@ -59,7 +59,7 @@ interface Project {
 const projects: Project[] = [
   {
     name: "Financial Advisors",
-    type: "2026 – Present",
+    type: "Professional",
     description:
       "Production SaaS platform for financial advisors, built on Astro and React. Sole engineer owning the full stack — from Cloudflare Workers/D1 infrastructure and Stripe billing to an AI Visibility Probe system that tests whether advisor profiles are surfaced and cited by Claude, GPT, and Gemini through a multi-provider Cloudflare AI Gateway layer.",
     icons: [
@@ -224,7 +224,7 @@ const Portfolio: FC = () => {
                   mb: 0.5,
                 }}
               >
-                <Typography variant="h5">{project.name}</Typography>
+                <Typography variant="h5" component="h2">{project.name}</Typography>
                 <Typography
                   variant="body2"
                   sx={{ color: theme.palette.text.secondary, alignSelf: "center" }}

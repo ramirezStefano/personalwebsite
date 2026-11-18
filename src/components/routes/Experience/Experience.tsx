@@ -43,7 +43,7 @@ const experiences: ExperienceEntry[] = [
   {
     company: "HoneyGrid",
     role: "Web Development Engineer",
-    period: "2022 – Present",
+    period: "2022 – 2023",
     description:
       "Collaborated with a talented team led by a senior engineer from Adobe to build cutting-edge web applications. Started in React Native with the Paper library, then transitioned to the main React web app. Led projects in complex component engineering, GPT-3.5 API integration, backend integrations, and user-facing feature development.",
     tech: ["React", "React Native", "TypeScript", "Material UI", "Redux", "Firebase", "GPT-3.5 API", "Mapbox"],
@@ -151,7 +151,7 @@ const Experience: FC = () => {
                     mb: 0.5,
                   }}
                 >
-                  <Typography variant="h5">{exp.company}</Typography>
+                  <Typography variant="h5" component="h2">{exp.company}</Typography>
                   <Typography
                     variant="body2"
                     sx={{ color: theme.palette.text.secondary, alignSelf: "center" }}
